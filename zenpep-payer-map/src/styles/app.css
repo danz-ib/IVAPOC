@@ -34,9 +34,22 @@ body {
     font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     background: var(--color-white);
     color: var(--color-black);
-    overflow: hidden; /* Prevent scrolling */
-    height: 100vh;
-    width: 100vw;
+    /* Force 13-inch iPad Pro landscape proportions */
+    width: 1366px !important;
+    height: 1024px !important;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    overflow: hidden !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+#app {
+    width: 1366px !important;
+    height: 1024px !important;
+    position: relative !important;
+    overflow: hidden !important;
 }
 
 /* Header Styling - ZENPEP Opening Page Style */
@@ -128,11 +141,11 @@ body {
 }
 
 .about-epi-parent {
-    position: fixed;
+    position: absolute;
     bottom: 0px;
     left: 0px;
     background-color: var(--color-purple);
-    width: 100%;
+    width: 1366px;
     height: 64px;
     display: flex;
     flex-direction: row;
@@ -190,8 +203,8 @@ body {
 
 /* iPad Pro Landscape Layout */
 .main-content {
-    height: calc(100vh - 114px); /* Account for header (50px) + bottom nav (64px) */
-    margin-top: 50px; /* Account for header height */
+    height: 910px; /* 1024px - 50px header - 64px bottom nav */
+    margin-top: 50px; /* Account for header height to prevent overlap */
     padding: 0;
     max-width: none;
     background: var(--color-white);
@@ -501,11 +514,11 @@ body {
 
 .map-section {
     flex: 1;
-    padding: 20px;
+    padding: 0;
     overflow: hidden;
     background: var(--color-white);
     display: flex;
-    align-items: center;
+    align-items: start;
     justify-content: center;
 }
 
@@ -513,7 +526,7 @@ body {
     width: 100%;
     height: 100%;
     display: flex;
-    align-items: center;
+    align-items: start;
     justify-content: center;
     max-width: 800px;
     max-height: 600px;

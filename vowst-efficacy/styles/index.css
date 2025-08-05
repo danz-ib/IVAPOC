@@ -461,6 +461,7 @@
     opacity: 0;
     transform: translateY(-200%);
     animation: fadeInNumber 0.5s ease-out 1.6s forwards, slideDown 0.5s ease-out 1.6s forwards;
+    line-height: 3rem;
 }
 .div19 {
     position: absolute;
@@ -485,6 +486,7 @@
     opacity: 0;
     transform: translateY(-200%);
     animation: fadeInNumber 0.5s ease-out 1.2s forwards, slideDown 0.5s ease-out 1.2s forwards;
+    line-height: 3rem;
 }
 .difference2 {
     margin: 0;
@@ -544,6 +546,7 @@
     opacity: 0;
     transform: translateY(-200%);
     animation: fadeInNumber 0.5s ease-out 1.8s forwards, slideDown 0.5s ease-out 1.8s forwards;
+    line-height: 3rem;
 }
 .div23 {
     position: absolute;
@@ -568,6 +571,7 @@
     opacity: 0;
     transform: translateY(-200%);
     animation: fadeInNumber 0.5s ease-out 1.4s forwards, slideDown 0.5s ease-out 1.4s forwards;
+    line-height: 3rem;
 }
 .difference3 {
     position: absolute;

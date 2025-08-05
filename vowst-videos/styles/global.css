@@ -12,6 +12,14 @@
 body {
     margin: 0;
     line-height: normal;
+    /* Force 13-inch iPad Pro landscape proportions */
+    width: 1366px;
+    height: 1024px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    background: white;
 }
 
 
