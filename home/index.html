@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  	<meta charset="utf-8">
+  	<meta name="viewport" content="initial-scale=1, width=device-width">
+  	<title>IVAPOC Home</title>
+  	<link rel="stylesheet" href="./styles/global.css" />
+  	<link rel="stylesheet" href="./styles/index.css" />
+</head>
+<body>
+  	<div class="ipad-pro-129-36">
+    		<!-- VOWST Button -->
+    		<button class="vowst-button" onclick="navigateToVowst()">
+    			<img class="vowst-button-icon" alt="VOWST" src="assets/vowst-button.svg">
+    		</button>
+    		
+    		<!-- ZENPEP Button -->
+    		<button class="zenpep-button" onclick="navigateToZenpep()">
+    			<img class="zenpep-button-icon" alt="ZENPEP" src="assets/zenpep-button.svg">
+    		</button>
+    		
+    		<!-- NHS Logo -->
+    		<img class="nhs-logo-rgb-1-icon" alt="NHS Logo" src="assets/NHS_Logo-RGB 1.svg">
+    		
+    		<!-- Navigation Icons -->
+    		<img class="noun-home-1570646-icon" alt="Home" src="assets/noun-home-1570646.svg">
+    		<img class="noun-menu-6829015-icon" alt="Menu" src="assets/noun-menu-6829015.svg">
+  	</div>
+  	
+  	<script>
+  		function navigateToVowst() {
+  			// Veeva CLM navigation (mock)
+  			if (typeof com !== 'undefined' && com.veeva && com.veeva.clm) {
+  				com.veeva.clm.navigateToSlide('vowst-opening/index.html');
+  			} else {
+  				// Fallback for development
+  				window.location.href = '../vowst-opening/index.html';
+  			}
+  		}
+  		
+  		function navigateToZenpep() {
+  			// Veeva CLM navigation (mock)
+  			if (typeof com !== 'undefined' && com.veeva && com.veeva.clm) {
+  				com.veeva.clm.navigateToSlide('zenpep-opening/index.html');
+  			} else {
+  				// Fallback for development
+  				window.location.href = '../zenpep-opening/index.html';
+  			}
+  		}
+  	</script>
+</body>
+</html>

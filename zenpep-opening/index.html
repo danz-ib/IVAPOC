@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, width=device-width">
+    <title>ZENPEP Opening</title>
+    <link rel="stylesheet" href="./styles/global.css" />
+    <link rel="stylesheet" href="./styles/index.css" />
+</head>
+<body>
+    <div class="zenpep-opening-container">
+        <!-- Header with Navigation -->
+        <header class="app-header">
+            <div class="header-left">
+                <button class="return-button" onclick="navigateToHome()">
+                    <img src="assets/return-button.svg" alt="Return" class="return-icon">
+                </button>
+                <span class="ellipses-icon">⋯</span>
+            </div>
+            <div class="header-right">
+                <p class="safety-info">Important Safety Information</p>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="content-left">
+                <div class="zenpep-panel">
+                    <div class="zenpep-header">
+                        <h1>ZENPEP</h1>
+                        <p class="subtitle">Pancrelipase Delayed-Release Capsules</p>
+                    </div>
+                    
+                    <div class="product-info">
+                        <div class="info-box">
+                            <h2>Indication</h2>
+                            <p>ZENPEP is indicated for the treatment of exocrine pancreatic insufficiency due to cystic fibrosis or other conditions.</p>
+                        </div>
+                        
+                        <div class="info-box">
+                            <h2>Dosage</h2>
+                            <p>Individualize dosage based on clinical symptoms, the degree of steatorrhea present, and the fat content of the diet.</p>
+                        </div>
+                        
+                        <div class="info-box">
+                            <h2>Important Safety Information</h2>
+                            <ul>
+                                <li>Fibrosing colonopathy has been reported with high-dose pancreatic enzyme replacement therapy</li>
+                                <li>Use with caution in patients with gout, renal impairment, or hyperuricemia</li>
+                                <li>Most common adverse reactions include headache, abdominal pain, and flatulence</li>
+                                <li>Safety and effectiveness in children below 1 year of age have not been established</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="action-buttons">
+                        <button class="btn-primary" onclick="navigateToDosing()">Dosing Calculator</button>
+                        <button class="btn-primary" onclick="navigateToPayerMap()">Payer Coverage</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="content-right">
+                <div class="product-visual">
+                    <img src="assets/zenpep-product.svg" alt="ZENPEP Product" class="product-image">
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <script>
+        function navigateToHome() {
+            if (typeof com !== 'undefined' && com.veeva && com.veeva.clm) {
+                com.veeva.clm.navigateToSlide('home/index.html');
+            } else {
+                window.location.href = '../home/index.html';
+            }
+        }
+        
+        function navigateToDosing() {
+            if (typeof com !== 'undefined' && com.veeva && com.veeva.clm) {
+                com.veeva.clm.navigateToSlide('zenpep-dosing-calc/index.html');
+            } else {
+                window.location.href = '../zenpep-dosing-calc/index.html';
+            }
+        }
+        
+        function navigateToPayerMap() {
+            if (typeof com !== 'undefined' && com.veeva && com.veeva.clm) {
+                com.veeva.clm.navigateToSlide('veeva-payer-map/src/index.html');
+            } else {
+                window.location.href = '../veeva-payer-map/src/index.html';
+            }
+        }
+    </script>
+</body>
+</html> 
