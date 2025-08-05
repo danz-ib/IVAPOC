@@ -28,7 +28,9 @@
       			<div class="videos">VIDEOS</div>
     		</div>
     		<div class="group-parent">
-      			<img class="frame-child" alt="" src="assets/Group 75.svg">
+      			<a href="../home/index.html" class="nav-link" onclick="navigateToHome(event)">
+      				<img class="frame-child" alt="" src="assets/Group 75.svg">
+      			</a>
       			
       			<img class="union-icon" alt="" src="assets/Union.svg">
       			
@@ -271,6 +273,15 @@
   	</div>
   		
 	<script>
+		function navigateToHome(event) {
+			event.preventDefault();
+			if (typeof com !== 'undefined' && com.veeva && com.veeva.clm) {
+				com.veeva.clm.navigateToSlide('home/index.html');
+			} else {
+				window.location.href = '../home/index.html';
+			}
+		}
+		
 		function navigateToEfficacy(event) {
 			event.preventDefault();
 			if (typeof com !== 'undefined' && com.veeva && com.veeva.clm) {

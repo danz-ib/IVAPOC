@@ -1,11 +1,32 @@
+/* Button Container */
+.button-container {
+    position: absolute;
+    top: 313px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    width: 100%;
+}
+
 /* Button Styles */
 .vowst-button, .zenpep-button {
-    position: absolute;
     background: none;
     border: none;
     padding: 0;
     cursor: pointer;
     transition: transform 0.2s ease;
+    width: 500px;
+    height: 400px;
+    flex-shrink: 0;
+}
+
+.vowst-button-icon, .zenpep-button-icon {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 }
 
 .vowst-button:hover, .zenpep-button:hover {
@@ -16,29 +37,7 @@
     transform: scale(0.98);
 }
 
-/* VOWST Button */
-.vowst-button {
-    top: 313px;
-    left: 61px;
-    width: 592px;
-    height: 438px;
-}
-
-.vowst-button-icon {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-}
-
-/* ZENPEP Button */
-.zenpep-button {
-    top: 313px;
-    left: 716px;
-    width: 593px;
-    height: 438px;
-}
-
-.zenpep-button-icon {
+.vowst-button-icon, .zenpep-button-icon {
     width: 100%;
     height: 100%;
     object-fit: contain;
@@ -86,16 +85,13 @@
 
 /* iPad Pro Landscape Responsive Adjustments */
 @media screen and (max-width: 1366px) and (orientation: landscape) {
-    .vowst-button {
-        left: 40px;
-        width: 500px;
-        height: 370px;
+    .vowst-button, .zenpep-button {
+        width: 450px;
+        height: 350px;
     }
     
-    .zenpep-button {
-        left: 580px;
-        width: 500px;
-        height: 370px;
+    .button-container {
+        gap: 30px;
     }
     
     .nhs-logo-rgb-1-icon {

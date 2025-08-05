@@ -645,6 +645,8 @@ body {
     color: inherit;
     cursor: pointer;
     font-size: inherit;
+    display: inline-block;
+    line-height: 0;
 }
 
 .nav-link .about-rcdi {

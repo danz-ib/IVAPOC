@@ -1,0 +1,47 @@
+
+/* Font Face Declarations */
+@font-face {
+    font-family: 'Mensura Slab Black';
+    src: url('../assets/Mensura/webFonts/MensuraSlabBlack/font.woff2') format('woff2'),
+         url('../assets/Mensura/webFonts/MensuraSlabBlack/font.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+body {
+    margin: 0;
+    line-height: normal;
+}
+
+
+:root {
+    
+    /* Color */
+    --color-black: #000;
+    --color-darkgray: #a1a2a3;
+    --color-khaki: #f3e964;
+    --color-mediumblue-100: #0336ff;
+    --color-white: #fff;
+    --color-midnightblue: #001b70;
+    --color-mediumblue-200: rgba(3, 54, 255, 0.05);
+    --color-dimgray: #5f6060;
+    --color-gray: #7d7d7e;
+    --color-lightskyblue: #4bc8f5;
+    
+    /* Gap */
+    --gap-5: 5px;
+    --gap-10: 10px;
+    
+    /* Font */
+    --font-barlow: Barlow;
+    --font-mensura-slab-black: Mensura Slab Black;
+    
+    /* FontSize */
+    --font-size-12: 12px;
+    --font-size-16: 16px;
+    --font-size-18: 18px;
+    --font-size-20: 20px;
+    --font-size-22: 22px;
+    
+}
