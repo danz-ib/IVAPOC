@@ -375,7 +375,7 @@ if (weight >= 180) {
             const img = document.createElement("img");
             img.src = pillImage;
             img.alt = `${pillStrength} pill`;
-            img.style.height = "20px";
+            img.style.height = "30px";
             img.style.marginRight = "2px";
             container.appendChild(img);
           }

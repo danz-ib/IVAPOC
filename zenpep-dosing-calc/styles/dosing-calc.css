@@ -1,10 +1,153 @@
+
+/* Right ISI box */
+.isi-box {
+  width: 326px; /* adjust as needed */
+  background-color: white;
+  color: black;
+  padding: 20px;
+  box-sizing: border-box;
+  overflow-y: auto;
+  border-left: 1px solid #ccc;
+  height: 90vh;
+  position: absolute;
+  right: 0;
+}
+
+
+.isi-scrollable {
+  max-height: 100%;
+  overflow-y: auto;
+}
+
+.isi-logo {
+  display: block;
+  margin: 0 auto 16px auto;
+  max-width: 150px;
+  margin-top: 40px;
+margin-bottom: 42px;
+}
+
+.isi-heading {
+  font-size: 15px;
+  font-weight: bold;
+  margin-bottom: 16px;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+.isi-subheading {
+  font-weight: bold;
+  margin-top: 16px;
+  margin-bottom: 8px;
+  text-transform: none;
+}
+
+.isi-bold {
+  font-weight: bold;
+  margin-top: 12px;
+}
+
+ul {
+  padding-left: 18px;
+  margin: 8px 0 16px 0;
+}
+
+ul li {
+  margin-bottom: 8px;
+}
+
+#zenpep-screen-input{
+  padding-right: 326px;
+}
+
+.group-parent {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  background-color: #fff;
+  width: 1366px;
+  overflow: hidden;
+  display: flex
+;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0px 26px 0px 0px;
+  box-sizing: border-box;
+  gap: 20px;
+  color: var(--color-black);
+  font-family: var(--font-open-sans);
+}
+
+
+.about-epi-parent {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  background-color: var(--color-purple);
+  width: 1366px;
+  height: 64px;
+  display: flex
+;
+
+color: white;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 13px 56px;
+  box-sizing: border-box;
+  gap: 0px;
+  text-align: center;
+  font-size: var(--font-size-20);
+}
+
+.frame-icon {
+  width: 95px;
+  position: relative;
+  height: 10px;
+  object-fit: cover;
+}
+
+.tap-here-for-container {
+  width: 442px;
+  position: relative;
+  line-height: 14px;
+  font-size: 12px;
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+.including-boxed-warning {
+  margin: 0;
+}
+
+.see-accompanying-full-prescrib-wrapper {
+  width: 625px;
+  position: relative;
+  height: 16px;
+  text-align: right;
+}
+
+.see-accompanying-full {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  font-size: 12px;
+  font-family: var(--font-open-sans);
+}
+
+.tap-here {
+  margin: 0;
+  white-space: pre-wrap;
+}
+
 .hidden {
     display: none !important;
   }
 
 
   .header-copy{
-    margin-top: 10%;
+    margin-top: 16%;
   }
 
 .zenpep-tool.hidden {
@@ -313,7 +456,7 @@
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
-  min-height: 100vh;
+  min-height: 95vh;
   display: flex;
   flex-direction: column;
 }
@@ -338,7 +481,7 @@
 .zenpep-tool__headline {
   font-family: "Poppins", sans-serif;
   font-weight: 700;
-  font-size: 48px;
+  font-size: 38px;
   line-height: 100%;
   color: white;
   text-align: center;
@@ -372,7 +515,7 @@
 
 .zenpep-tool__input {
     width: 280px;
-    height: 54px;
+    height: 67px;
     padding: 0;
     font-size: 47px;
     text-align: center;
@@ -476,6 +619,7 @@
   margin: 0 auto;
   position: relative;
   aspect-ratio: 3.5 / 1; /* Adjust as needed */
+  margin-right: 450px;
 }
 
 .zenpep-calc__scale-base {
@@ -796,7 +940,7 @@
   font-size: 22px;
   font-weight: bold;
   line-height: 22px;
-  left: -185px;
+  left: -192px;
   top: 2px;
 
   text-align: right;
@@ -807,7 +951,7 @@
   font-size: 22px;
   font-weight: bold;
   line-height: 24px;
-  left: -220px;
+  left: -233px;
   text-align: right;
   top: 0px;
 }
@@ -848,7 +992,7 @@
   justify-content: center; /* center the pair as a group */
   align-items: flex-start;
   gap: 3rem;
-  margin-top: 0rem;
+  margin-top: 5rem;
   width: fit-content;
   margin-left: auto;
   margin-right: auto;
@@ -947,12 +1091,12 @@
 .zenpep-pill-toggle-rx {
   display: flex;
   align-items: flex-start;
-  gap: 0.5rem;
-  margin-top: 0.6rem;
-  font-size: 0.75rem;
+  gap: 1rem;
+  margin-top: 1rem;
+  font-size: 18px;
   text-align: left;
   color: #1d1f21;
-  width: 140px;
+  width: 180px;
 }
 
 .rx-icon {
@@ -966,6 +1110,7 @@
   gap: 1.5rem;
   flex-wrap: wrap;
   max-width: 937px;
+  margin-top: 2rem;
 
 
   margin-right: auto;
@@ -980,7 +1125,7 @@
   font-weight: 600;
   text-decoration: underline;
   color: #33003b;
-  font-size: 0.95rem;
+  font-size: 20px;
 }
 
 /* 💬 Callout */
@@ -1013,7 +1158,7 @@
 /* 📝 Footnotes */
 .zenpep-footnotes {
   text-align: left;
-  font-size: 0.7rem;
+  font-size: 1rem;
   color: #1e1e1e;
   max-width: 330px;
   margin: 0 auto 3rem auto;
