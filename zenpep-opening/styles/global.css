@@ -1,9 +1,27 @@
+
 body {
     margin: 0;
     line-height: normal;
 }
 
+
 :root {
+    
     /* Color */
     --color-whitesmoke: #ededed;
-} 
+    --color-purple: #9f248b;
+    --color-white: #fff;
+    --color-midnightblue: #001b70;
+    --color-black: #000;
+    --color-thistle: #cea2c8;
+    
+    /* Font */
+    --font-poppins: Poppins;
+    --font-open-sans: Open Sans;
+    
+    /* FontSize */
+    --font-size-12: 12px;
+    --font-size-20: 20px;
+    --font-size-40: 40px;
+    
+}

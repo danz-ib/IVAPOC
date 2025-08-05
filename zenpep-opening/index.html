@@ -1,97 +1,95 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="initial-scale=1, width=device-width">
-    <title>ZENPEP Opening</title>
-    <link rel="stylesheet" href="./styles/global.css" />
-    <link rel="stylesheet" href="./styles/index.css" />
+  	<meta charset="utf-8">
+  	<meta name="viewport" content="initial-scale=1, width=device-width">
+  	
+  	
+  	<link rel="stylesheet" href="./styles/global.css" />
+  	<link rel="stylesheet"  href="./styles/index.css" />
+  	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;800&display=swap" />
+  	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open Sans:wght@400;600;700&display=swap" />
+  	
+  	
+  	
 </head>
 <body>
-    <div class="zenpep-opening-container">
-        <!-- Header with Navigation -->
-        <header class="app-header">
-            <div class="header-left">
-                <button class="return-button" onclick="navigateToHome()">
-                    <img src="assets/return-button.svg" alt="Return" class="return-icon">
-                </button>
-                <span class="ellipses-icon">⋯</span>
-            </div>
-            <div class="header-right">
-                <p class="safety-info">Important Safety Information</p>
-            </div>
-        </header>
-
-        <!-- Main Content -->
-        <main class="main-content">
-            <div class="content-left">
-                <div class="zenpep-panel">
-                    <div class="zenpep-header">
-                        <h1>ZENPEP</h1>
-                        <p class="subtitle">Pancrelipase Delayed-Release Capsules</p>
-                    </div>
-                    
-                    <div class="product-info">
-                        <div class="info-box">
-                            <h2>Indication</h2>
-                            <p>ZENPEP is indicated for the treatment of exocrine pancreatic insufficiency due to cystic fibrosis or other conditions.</p>
-                        </div>
-                        
-                        <div class="info-box">
-                            <h2>Dosage</h2>
-                            <p>Individualize dosage based on clinical symptoms, the degree of steatorrhea present, and the fat content of the diet.</p>
-                        </div>
-                        
-                        <div class="info-box">
-                            <h2>Important Safety Information</h2>
-                            <ul>
-                                <li>Fibrosing colonopathy has been reported with high-dose pancreatic enzyme replacement therapy</li>
-                                <li>Use with caution in patients with gout, renal impairment, or hyperuricemia</li>
-                                <li>Most common adverse reactions include headache, abdominal pain, and flatulence</li>
-                                <li>Safety and effectiveness in children below 1 year of age have not been established</li>
-                            </ul>
-                        </div>
-                    </div>
-                    
-                    <div class="action-buttons">
-                        <button class="btn-primary" onclick="navigateToDosing()">Dosing Calculator</button>
-                        <button class="btn-primary" onclick="navigateToPayerMap()">Payer Coverage</button>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="content-right">
-                <div class="product-visual">
-                    <img src="assets/zenpep-product.svg" alt="ZENPEP Product" class="product-image">
-                </div>
-            </div>
-        </main>
-    </div>
-    
-    <script>
-        function navigateToHome() {
-            if (typeof com !== 'undefined' && com.veeva && com.veeva.clm) {
-                com.veeva.clm.navigateToSlide('home/index.html');
-            } else {
-                window.location.href = '../home/index.html';
-            }
-        }
-        
-        function navigateToDosing() {
-            if (typeof com !== 'undefined' && com.veeva && com.veeva.clm) {
-                com.veeva.clm.navigateToSlide('zenpep-dosing-calc/index.html');
-            } else {
-                window.location.href = '../zenpep-dosing-calc/index.html';
-            }
-        }
-        
-        function navigateToPayerMap() {
-            if (typeof com !== 'undefined' && com.veeva && com.veeva.clm) {
-                com.veeva.clm.navigateToSlide('veeva-payer-map/src/index.html');
-            } else {
-                window.location.href = '../veeva-payer-map/src/index.html';
-            }
-        }
-    </script>
+  	
+  	<div class="ipad-pro-129-42">
+    		<img class="femalehero-v8b-rgb-1-icon" alt="" src="assets/FemaleHero_v8B_RGB 1.png">
+    		
+    		<div class="about-epi-parent">
+      			<div class="about-epi">About EPI</div>
+      			<div class="about-epi">Dosing</div>
+      			<div class="about-epi">Coverage & savings</div>
+      			<div class="about-epi">Dosing calculator</div>
+      			<div class="about-epi">Clinical data</div>
+      			<div class="about-epi">ZENPEP for Simple Starts</div>
+    		</div>
+    		<div class="rectangle-parent">
+      			<div class="frame-child">
+      			</div>
+      			<img class="frame-item" alt="" src="assets/Group 8.svg">
+      			
+      			<b class="important-safety-information">IMPORTANT SAFETY INFORMATION</b>
+      			<div class="indications-and-usage-zenpep-container">
+        				<span class="indications-and-usage-zenpep-container1">
+          					<p class="indications-and-usage-zenpep">
+            						<b class="indications-and-usage">INDICATIONS AND USAGE</b>
+            						<span class="zenpep-is-indicated-for">ZENPEP® is indicated for the treatment of exocrine pancreatic insufficiency in adult and pediatric patients.</span>
+          					</p>
+          					<p class="indications-and-usage-zenpep">
+            						<b>IMPORTANT SAFETY INFORMATION</b>
+          					</p>
+          					<p class="warnings-and-precautions">Warnings and Precautions</p>
+          					<p class="fibrosing-colonopathy">Fibrosing Colonopathy</p>
+        				</span>
+      			</div>
+    		</div>
+    		<div class="group-parent">
+      			<img class="frame-inner" alt="" src="assets/Group 76.svg">
+      			
+      			<img class="frame-icon" alt="" src="assets/Frame 216.svg">
+      			
+      			<div class="tap-here-for-container">
+        				<p class="tap-here">Tap  here for indications and additional Important Safety Information,</p>
+        				<p class="including-boxed-warning">including BOXED WARNING on Serious Infections and Malignancy</p>
+      			</div>
+      			<div class="see-accompanying-full-prescrib-wrapper">
+        				<div class="see-accompanying-full">See accompanying Full Prescribing Information</div>
+      			</div>
+    		</div>
+    		<img class="frame-icon1" alt="" src="assets/Frame.svg">
+    		
+    		<div class="noun-home-1570646-parent">
+      			<img class="noun-home-1570646-icon" alt="" src="assets/noun-home-1570646.svg">
+      			
+      			<img class="noun-menu-6829015-icon" alt="" src="assets/noun-menu-6829015.svg">
+      			
+    		</div>
+    		<div class="epiexocrine-pancreatic-insuff-container">
+      			<span class="indications-and-usage-zenpep-container1">
+        				<p class="including-boxed-warning">EPI=exocrine pancreatic insufficiency; </p>
+        				<p class="including-boxed-warning">PERT=pancreatic enzyme replacement therapy.</p>
+      			</span>
+    		</div>
+    		<div class="when-prescribing-pert-to-container">
+      			<span class="indications-and-usage-zenpep-container1">
+        				<p class="when-prescribing-pert-to">When prescribing PERT to your adult patients with EPI</p>
+        				<p class="start-simply">Start simply</p>
+        				<p class="with-one-capsule">with one capsule </p>
+        				<p class="including-boxed-warning">of ZENPEP®</p>
+      			</span>
+    		</div>
+    		<div class="cover-banner">
+    		</div>
+    		<div class="products-are-not">*Products are not substitutable. Material differences exist between products. Consult each individual product’s United States Prescribing Information for full details.</div>
+    		<img class="coverage-page-gif-1" alt="" src="assets/countup.gif">
+    		
+  	</div>
+  	
+  	
+  	
+  	
 </body>
-</html> 
+</html>

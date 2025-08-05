@@ -5,10 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <title>ZENPEP Payer Coverage</title>
     
-    <!-- Google Fonts - Poppins -->
+    <!-- Google Fonts - Poppins and Open Sans -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="styles/app.css">
     
@@ -40,19 +41,19 @@
 <body>
     <div id="app">
         <!-- Header with Safety Information -->
-        <header class="app-header">
-            <img src="assets/return-button.svg" alt="Back" class="return-icon">
-            <span class="ellipses-icon">⋯</span>
-            
-            <div class="header-content">
-                <div class="safety-info">
-                    <p>Tap here for indications and additional Important Safety Information, including BOXED WARNING on Serious Infections and Malignancy.</p>
-                </div>
-                <div class="header-right">
-                    <p>See accompanying Full Prescribing Information</p>
-                </div>
+        <div class="group-parent">
+            <a href="../home/index.html">
+                <img class="frame-inner" alt="" src="assets/Group 76.svg">
+            </a>
+            <img class="frame-icon" alt="" src="assets/Frame 216.svg">
+            <div class="tap-here-for-container">
+                <p class="tap-here">Tap  here for indications and additional Important Safety Information,</p>
+                <p class="including-boxed-warning">including BOXED WARNING on Serious Infections and Malignancy</p>
             </div>
-        </header>
+            <div class="see-accompanying-full-prescrib-wrapper">
+                <div class="see-accompanying-full">See accompanying Full Prescribing Information</div>
+            </div>
+        </div>
         
         <main class="main-content landscape-layout">
             <!-- Left Panel - State Specific Information -->
@@ -162,26 +163,14 @@
         </main>
         
         <!-- Bottom Navigation Bar -->
-        <nav class="veeva-bottom-nav">
-            <div class="nav-item" onclick="navigateToSection('about-epi')">
-                <span class="nav-label">About EPI</span>
-            </div>
-            <div class="nav-item" onclick="navigateToSection('dosing')">
-                <span class="nav-label">Dosing</span>
-            </div>
-            <div class="nav-item active" onclick="navigateToSection('coverage-savings')">
-                <span class="nav-label">Coverage & savings</span>
-            </div>
-            <div class="nav-item" onclick="navigateToSection('patient-profiles')">
-                <span class="nav-label">Patient profiles</span>
-            </div>
-            <div class="nav-item" onclick="navigateToSection('clinical-data')">
-                <span class="nav-label">Clinical data</span>
-            </div>
-            <div class="nav-item" onclick="navigateToSection('zenpep-simple-starts')">
-                <span class="nav-label">ZENPEP for Simple Starts</span>
-            </div>
-        </nav>
+        <div class="about-epi-parent">
+            <div class="about-epi">About EPI</div>
+            <div class="about-epi">Dosing</div>
+            <div class="about-epi" style="font-weight: bold;">Coverage & savings</div>
+            <div class="about-epi">Dosing calculator</div>
+            <div class="about-epi">Clinical data</div>
+            <div class="about-epi">ZENPEP for Simple Starts</div>
+        </div>
     </div>
     
     <script src="app.js"></script>
