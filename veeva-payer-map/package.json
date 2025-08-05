@@ -1,0 +1,39 @@
+{
+  "name": "zenpep-payer-map",
+  "version": "1.0.0",
+  "description": "Interactive payer coverage map for Zenpep therapeutic - optimized for Veeva CLM on iPad",
+  "main": "src/index.html",
+  "scripts": {
+    "start": "live-server src --port=8080 --open=/",
+    "serve": "python3 -m http.server 8000 --directory src",
+    "validate": "html5validator src/index.html",
+    "zip": "zip -r zenpep-payer-map.zip src/ -x '*.DS_Store' '*.git*'"
+  },
+  "keywords": [
+    "veeva",
+    "clm",
+    "payer",
+    "coverage",
+    "map",
+    "pharmaceutical",
+    "ipad",
+    "interactive"
+  ],
+  "author": "Pharmaceutical Solutions Team",
+  "license": "MIT",
+  "devDependencies": {
+    "live-server": "^1.2.1",
+    "html5validator": "^0.4.2"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/company/zenpep-payer-map.git"
+  },
+  "bugs": {
+    "url": "https://github.com/company/zenpep-payer-map/issues"
+  },
+  "homepage": "https://github.com/company/zenpep-payer-map#readme"
+}
