@@ -80,8 +80,8 @@
     position: absolute;
     top: 0px;
     left: 271px;
-    font-size: 14px;
-    line-height: 14px;
+    font-size: 12px;
+    line-height: 13px;
     display: flex;
     align-items: center;
     width: 410px;
@@ -197,25 +197,28 @@
     margin-block-start: 0;
     margin-block-end: Mixed;
     font-size: 24px;
+    line-height: 2rem;
 }
 .start-simply {
     margin-block-start: 0;
     margin-block-end: Mixed;
     font-size: 64px;
     font-weight: 800;
+    line-height: 4rem
 }
 .with-one-capsule {
     margin-block-start: 0;
     margin-block-end: Mixed;
+    line-height: 0rem;
 }
 .when-prescribing-pert-to-container {
     position: absolute;
     top: 492px;
     left: 133px;
-    line-height: 120%;
+    line-height: 2rem;
     display: flex;
     align-items: center;
-    width: 580px;
+    width: 425px;
     font-size: var(--font-size-40);
 }
 .cover-banner {

@@ -120,6 +120,7 @@ body {
     color: var(--color-white);
     cursor: pointer;
     transition: opacity 0.2s;
+    text-decoration: none;
 }
 
 .about-epi:hover {
