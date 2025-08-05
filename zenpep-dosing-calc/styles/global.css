@@ -1,0 +1,31 @@
+body {
+    margin: 0;
+    line-height: normal;
+    /* Force 13-inch iPad Pro landscape proportions */
+    width: 1366px;
+    height: 1024px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    background: white;
+}
+
+:root {
+    /* Color */
+    --color-white: #ffffff;
+    --color-black: #000000;
+    --color-midnightblue: #001b70;
+    --color-lightskyblue: #4bc8f5;
+    --color-khaki: #f0e68c;
+    
+    /* Font */
+    --font-barlow: 'Barlow', sans-serif;
+    
+    /* FontSize */
+    --font-size-12: 12px;
+    --font-size-14: 14px;
+    --font-size-16: 16px;
+    --font-size-18: 18px;
+    --font-size-20: 20px;
+} 

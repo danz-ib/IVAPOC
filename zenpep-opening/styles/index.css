@@ -12,6 +12,19 @@
 .about-epi {
     position: relative;
 }
+
+.nav-link {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+    font-size: inherit;
+    display: inline-block;
+    line-height: 0;
+}
+
+.nav-link:hover .about-epi {
+    opacity: 0.8;
+}
 .about-epi-parent {
     position: absolute;
     top: 960px;
