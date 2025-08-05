@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zenpep Dosing Calculator</title>
+
+    <!-- Bootstrap grid (layout only) -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+
+    <!-- Custom scoped styles -->
+    <link rel="stylesheet" href="styles/dosing-calc.css" />
+  </head>
+
+  <body>
+
+    <!-- 🔘 Launch Tool Button (for internal testing/demo) -->
+
+    <!-- 
+  🧪 TESTING: Placeholder Launch Button 
+  --------------------------------------
+  This button is included for internal testing/demo purposes only. 
+  In production, the tool should be triggered by the actual CTA or 
+  anchor on the page.
+
+  ✅ TO INTEGRATE:
+  - Simply add the same ID and class used below (`id="launchCalculatorBtn"`)
+    to the desired production button or link.
+  - Also ensure it lives inside a wrapper with ID `launch-wrapper` if you 
+    want to reuse the same hiding/showing logic for the toggle state.
+-->
+
+<div id="launch-wrapper" class="text-center my-5 hidden">
+    <button id="launchCalculatorBtn" class="btn btn-primary btn-lg">
+      Launch Dosing Calculator
+    </button>
+  </div>
+    <!-- ======================================
+         OUTERMOST WRAPPER (namespaced)
+         ====================================== -->
+    <div class="zenpep-tool">
+      <!-- ====================================
+           SCREEN 1 – INPUT + SCALE
+           ==================================== -->
+      <section
+        id="zenpep-screen-input"
+        class="zenpep-tool__screen zenpep-tool__bg py-3"
+      >
+      <button class="zenpep-exit-button align-items-center" id="exitBtn">
+        <img
+          src="assets/exit-btn-veeva.svg"
+          alt="Exit Calculator"
+          class="zenpep-exit-icon"
+        />
+      </button>
+        <div class="">
+          <div class="">
+            <div class="text-center header-copy">
+              <!-- Logo and Exit -->
+              <div class="zenpep-header-wrapper">
+                <!-- Exit button (icon-only, replaces previous text + icon) -->
+               
+              </div>
+              
+
+              <!-- Eyebrow -->
+              <p class="zenpep-tool__eyebrow">
+                This calculator is intended for adults <br class="desk-none" />
+                weighing&nbsp;115&nbsp;lb&nbsp;to&nbsp;265&nbsp;lb
+              </p>
+
+              <!-- Headline -->
+              <h1 class="zenpep-tool__headline">
+                How much does your EPI <br class="desk-none" />
+                patient weigh?
+              </h1>
+
+              <!-- Weight input -->
+              <div class="zenpep-tool__input-wrapper">
+                <input
+                  type="number"
+                  id="zenpep-weight"
+                  class="zenpep-tool__input"
+                  min="0"
+                  max="999"
+                />
+                <span class="zenpep-tool__input-unit">lb</span>
+                <div
+                  id="zenpep-weight-warning"
+                  class="zenpep-tool__warning d-none"
+                >
+                  This calculator is <br />intended for adults <br />weighing
+                  115 lb to 265 lb
+                </div>
+                <!-- CTA -->
+                <button
+                  id="zenpep-calc-btn"
+                  class="zenpep-tool__button"
+                  disabled
+                >
+                  CALCULATE
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- ✅ Scale Graphic (moved outside col-*) -->
+
+          <div
+            id="zenpep-scale-holder"
+            class="w-100 d-flex justify-content-center "
+          >
+            <div class="zenpep-calc__scale-wrapper">
+              <!-- Background Scale Bar -->
+              <img
+                src="assets/measurement-bar.svg"
+                alt="Measurement Bar"
+                class="zenpep-calc__bar"
+              />
+
+              <!-- Light Weight Rail -->
+              <div class="zenpep-calc__rail zenpep-calc__rail--light">
+                <div
+                  class="zenpep-calc__weight-wrapper zenpep-calc__weight-wrapper--light"
+                >
+                  <img
+                    src="assets/weight-light.svg"
+                    alt="Light Weight"
+                    class="zenpep-calc__weight"
+                  />
+                </div>
+              </div>
+
+              <!-- Heavy Weight Rail -->
+              <div class="zenpep-calc__rail zenpep-calc__rail--heavy">
+                <div
+                  class="zenpep-calc__weight-wrapper zenpep-calc__weight-wrapper--heavy"
+                >
+                  <img
+                    src="assets/weight-heavy.svg"
+                    alt="Heavy Weight"
+                    class="zenpep-calc__weight"
+                  />
+                </div>
+              </div>
+
+              <!-- Base of the Scale -->
+              <img
+                src="assets/scale-base.svg"
+                alt="Scale Base"
+                class="zenpep-calc__scale-base"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ====================================
+           SCREEN 2 – RESULTS (initially hidden)
+           ==================================== -->
+      <section id="zenpep-screen-results" class="zenpep-tool__screen d-none">
+        <!-- 🟣 Results Header -->
+        <!-- 🟣 Results Header -->
+
+        <button class="zenpep-exit-button zenpep-results__exit d-md-flex" id="exitBtn">
+          <img
+            src="assets/exit-btn-veeva.svg"
+            alt="Exit Calculator"
+            class="zenpep-exit-icon"
+          />
+        </button>
+        <div
+          class="zenpep-results__header d-flex align-items-center"
+        >
+          <!-- Left: Logo -->
+         
+
+          <!-- Center: Eyebrow + Headline -->
+          <div class="zenpep-results__text  ">
+            <p class="zenpep-results__eyebrow">
+              This calculator is for use with adult patients with EPI weighing
+              115 lb to 265 lb
+            </p>
+            <h2 class="zenpep-results__headline">
+              Estimate the range of lipase for your patients with EPI
+            </h2>
+          </div>
+
+          <!-- Right: Exit -->
+          <!-- Right: Exit -->
+
+
+        </div>
+
+        <div id="first-bottom-bar" class="zenpep-result__bottombar">
+            <div class="zenpep-result__bottombar-inner">
+          
+              <!-- ✅ NEW LEFT CONTAINER: Label + Input + Button -->
+              <div style="display: flex; flex-direction: row; flex-wrap: wrap; align-items: center; gap: 1rem;">
+                <div class="zenpep-result__label">Input your patient’s weight (lb)</div>
+          
+                <div class="zenpep-result__input-wrapper">
+                  <input
+                    type="number"
+                    id="result-weight-input"
+                    class="zenpep-result__weight-input"
+                    maxlength="3"
+                  />
+                  <span class="zenpep-result__input-unit">lb</span>
+                </div>
+          
+                <button class="zenpep-result__button" id="recalculate-btn">
+                  CALCULATE
+                </button>
+              </div>
+          
+              <!-- ✅ RIGHT CONTAINER: Disclaimer stays as-is -->
+              <div class="zenpep-result__disclaimer">
+                This dosing calculator is for informational purposes only and does
+                not replace clinical judgment. Refer to the full
+                <a
+                  style="text-decoration: underline; color: #1f6bcf; font-weight: bold;"
+                  href="https://www.zenpep.com/home-hcp/prescribing-information"
+                  target="_blank"
+                >Prescribing Information</a>
+                for complete dosing instructions and safety information.
+              </div>
+          
+            </div>
+          </div>
+          
+
+        <!-- 📦 Animated Dosing Box -->
+        <!-- 📦 Animated Dosing Box with Nested Box -->
+  
+        <div class="zenpep-dose-container">
+            <div class="zenpep-left-column">
+                <h2 class="lipase-title">LIPASE</h2>
+          <div class="zenpep-dose-box">
+            <!-- Row 1: Max dose per day -->
+            <div class="zenpep-dose-row">
+              <span class="zenpep-dose-label first-max"
+                >Maximum <br />
+                dose per day</span
+              >
+              <div class="zenpep-dose-value">
+                <span id="dose-max-day" >775,644</span>
+                <span style="font-size: 16px;"class="zenpep-mobile-dose-label mobile-only"
+                  >Max dose <br />
+                  per day</span
+                >
+              </div>
+            </div>
+
+            <!-- Row 2: Max dose per meal -->
+            <div
+              class="zenpep-dose-box--nested zenpep-dose-row second-mobile-box"
+            >
+              <span class="zenpep-dose-label second-max"
+                >Maximum dose <br />per meal</span
+              >
+              <div class="zenpep-dose-value--nested">
+                <span id="dose-max-meal">193,910</span>
+                <span class="zenpep-mobile-dose-label mobile-only"
+                  >Max dose <br />per meal</span
+                >
+                <!-- NEW SPAN for pill icons -->
+                <span id="pill-icons-max" class="pill-icon-container"></span>
+
+                <span class="zenpep-pill-label-second">4x - 40K<span></span>
+              </div>
+
+              <!-- Pill label -->
+
+              <!-- Row 3: Min starting dose per meal -->
+              <div class="zenpep-dose-box--inner zenpep-dose-row">
+                <span class="zenpep-dose-label third-max"
+                  >Minimum starting <br />dose per meal</span
+                >
+                <div class="zenpep-dose-value--inner">
+                  <span id="dose-starting-meal">38,782</span
+                  ><span class="zenpep-mobile-dose-label mobile-only"
+                    >Min starting <br />dose per meal</span
+                  >
+                  
+                    <!-- NEW SPAN for pill icons -->
+                    <span id="pill-icons-rec" class="pill-icon-container"></span>
+
+                  <span class="zenpep-pill-label-third">1x - 40K</span>
+                </div>
+
+                <!-- Pill label -->
+              </div>
+            </div>
+          </div>
+
+          <div class="zenpep-pill-toggle-section" >
+            <!-- 🔘 Left: Pill strength toggle -->
+            <div class="zenpep-pill-toggle-box">
+              <div class="zenpep-pill-toggle-title">Pill strength</div>
+              <div class="zenpep-pill-toggle-switch">
+                <div id="pillToggleTrack" class="pill-toggle-track" data-state="40K">
+                  <div id="pillToggleThumb" class="pill-toggle-thumb"></div>
+                </div>
+                <div class="pill-toggle-labels">
+                  <span id="pill40k" class="pill-strength active">40K</span>
+                  <span id="pill60k" class="pill-strength">60K</span>
+                </div>
+              </div>
+            </div>
+          
+            <!-- 📎 Right: Link + Rx -->
+            <div class="rx-strength-options" style="display: flex; flex-direction: column; gap: 1rem; align-items: flex-start;">
+              <div class="zenpep-more-strengths-link">
+                <a href="#" id="triggerStrengthModal">See all ZENPEP pill <br class="mobile-only">strength options</a>
+              </div>
+          
+              <div class="zenpep-pill-toggle-rx">
+                <img src="assets/RX-icon.png" alt="Rx icon" class="rx-icon" />
+                <span>Sample Rx for<br />starting dose</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+          <!-- Right: Pill Strength Box -->
+          <div class="zenpep-right-column">
+            <h2 class="lipase-title">&nbsp;</h2>
+            <div class="zenpep-dosing-callout">
+                <img
+                  src="assets/Dosing-pill-icon.png"
+                  alt="pill icon"
+                  class="pill-icon"
+                />
+                <p>
+                  In addition to weight, individualize the dosage based on clinical
+                  symptoms, the degree of steatorrhea present, and the fat content of
+                  the diet.<sup>1</sup>
+                </p>
+              </div>
+      
+              <!-- 📝 Footnotes -->
+              <div class="zenpep-footnotes">
+                <p style="text-indent: -10px; padding-left: 10px;">
+                  <span style="font-size: 14px;
+                  position: relative;
+                  top: 1px;
+                  left: 3px;
+                  padding-right: 4px;">*</span>Based on 2 snacks/3 meals per day.<br />
+                  EPI=exocrine pancreatic insufficiency.<br />
+                  ZENPEP capsules and capsule contents should not be crushed or chewed.<br />
+                  ZENPEP should be taken with every meal and snack. Usually, half of
+                  the prescribed dose for an individualized full meal should be given
+                  with each snack.<sup>1</sup><br />
+                  Therapy should be initiated at the lowest recommended dosage and
+                  individualized to the dosage based on clinical symptoms, the degree
+                  of steatorrhea present, and the fat content of the diet.<sup>1</sup>
+                </p>
+              </div>
+          </div>
+        </div>
+
+        <!-- Additonal Rows here -->
+        <!-- 📎 See All Link -->
+   
+
+        <!-- 💬 Callout Box -->
+      
+        
+          
+          <div id="second-bottom-bar" class="zenpep-result__bottombar">
+            <div class="zenpep-result__bottombar-inner">
+          
+              <!-- ✅ NEW LEFT CONTAINER: Label + Input + Button -->
+              <div style="display: flex; flex-direction: row; flex-wrap: wrap; align-items: center; gap: 1rem;">
+                <div class="zenpep-result__label">Input your patient’s weight (lb)</div>
+          
+                <div class="zenpep-result__input-wrapper">
+                  <input
+                    type="number"
+                    id="result-weight-input-mobile"
+                    class="zenpep-result__weight-input"
+                    maxlength="3"
+                  />
+                  <span class="zenpep-result__input-unit">lb</span>
+                </div>
+          
+                <button class="zenpep-result__button" id="recalculate-btn-mobile">
+                  CALCULATE
+                </button>
+              </div>
+          
+              <!-- ✅ RIGHT CONTAINER: Disclaimer stays as-is -->
+              <div class="zenpep-result__disclaimer">
+                This dosing calculator is for informational purposes only and does
+                not replace clinical judgment. Refer to the full
+                <a
+                  style="text-decoration: underline; color: #1f6bcf; font-weight: bold;"
+                  href="https://www.zenpep.com/home-hcp/prescribing-information"
+                  target="_blank"
+                >Prescribing Information</a>
+                for complete dosing instructions and safety information.
+              </div>
+          
+            </div>
+          </div>
+      </section>
+    </div>
+
+    <!-- ❌ Weight Out-of-Range Modal -->
+    <div id="invalidWeightModal" class="zenpep-modal hidden">
+      <div class="zenpep-modal-overlay"></div>
+      <div class="zenpep-modal-content">
+        <button class="zenpep-modal-close" id="closeInvalidWeightModal">
+          ×
+        </button>
+        <p class="weightModalP">
+          <strong
+            >This calculator is intended for adults weighing 115 lb to 265
+            lb.</strong
+          >
+        </p>
+      </div>
+    </div>
+
+    <!-- ⚠️ Weight Range Modal -->
+    <div id="zenpep-strength-modal" class="zenpep-modal hidden">
+      <div class="zenpep-modal-overlay"></div>
+      <div class="zenpep-modal-content all-pills">
+        <button class="zenpep-modal-close">&times;</button>
+
+        <h2 style="color: #a91c8b; font-weight: bold; font-size: 1.6rem">
+          ZENPEP<sup>®</sup> (pancrelipase) offers flexible<br />dosing options
+          for your patients
+        </h2>
+
+        <hr
+          style="border: none; border-top: 3px solid #a91c8b; margin: 16px 0"
+        />
+
+        <div
+          style="display: flex; justify-content: center; align-items: center"
+          class="pill-groups"
+        >
+          <img
+            src="assets/left-group-pills.svg"
+            alt="Pills left"
+            class="pill-image"
+          />
+          <img
+            src="assets/right-group-pills.svg"
+            alt="Pills right"
+            class="pill-image"
+          />
+        </div>
+        <p class="pill-note-label">Capsules not to scale.</p>
+        <ul class="pill-note-list">
+          <li>Do not substitute other pancreatic enzyme products for ZENPEP</li>
+          <li>
+            ZENPEP capsules and capsule contents should not be crushed or chewed
+          </li>
+          <li>
+            ZENPEP should be taken with every meal and snack. Usually, half of
+            the prescribed dose for an individualized full meal should be given
+            with each snack<sup>1</sup>
+          </li>
+          <li>
+            Therapy should be initiated at the lowest recommended dosage and
+            individualize the dosage based on clinical symptoms, the degree of steatorrhea
+            present, and the fat content of the diet<sup>1</sup>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- ⚠️ Too-Light Weight Modal -->
+    <div id="zenpep-too-light-modal" class="zenpep-modal hidden">
+      <div class="zenpep-modal-overlay"></div>
+      <div class="zenpep-modal-content all-pills">
+        <button id="closeTooLightModal" class="zenpep-modal-close">
+          &times;
+        </button>
+
+        <h2
+          style="
+            color: #a91c8b;
+            font-weight: 700;
+            font-size: 1.5rem;
+            text-align: center;
+          "
+        >
+          This calculator is intended for adults<br />weighing ≥115 lb
+        </h2>
+
+        <p
+          style="
+            text-align: center;
+            font-size: 1rem;
+            margin-top: 10px;
+            color: black;
+          "
+        >
+          Please see other available
+       ZENPEP<sup>®</sup> (pancrelipase) dosing strengths
+          below.
+        </p>
+
+        <hr
+          style="border: none; border-top: 3px solid #a91c8b; margin: 16px 0"
+        />
+
+        <div class="pill-groups">
+          <img
+            src="assets/light-left-group-pills.svg"
+            alt="Pills left"
+            class="pill-image"
+          />
+          <img
+            src="assets/light-right-group-pills.svg"
+            alt="Pills right"
+            class="pill-image"
+          />
+        </div>
+
+        <p class="pill-note-label">Capsules not to scale.</p>
+        <ul class="pill-note-list">
+          <li>Do not substitute other pancreatic enzyme products for ZENPEP</li>
+          <li>
+            ZENPEP capsules and capsule contents should not be crushed or chewed
+          </li>
+          <li>
+            ZENPEP should be taken with every meal and snack. Usually, half of
+            the prescribed dose for an individualized full meal should be given
+            with each snack<sup>1</sup>
+          </li>
+          <li>
+            Therapy should be initiated at the lowest recommended dosage and
+            individualize the dosage
+ based on clinical symptoms, the degree of steatorrhea
+            present, and the fat content of the diet<sup>1</sup>
+          </li>
+        </ul>
+
+        <p
+          style="
+            font-size: 13px;
+            text-align: center;
+            font-weight: 600;
+            margin-top: 16px;
+            color: black;
+          "
+        >
+          Determine lipase dosage for pediatric patients with
+          <a href="#" id="tooLightCalculatorLink" style="color: #007bff"
+            >this calculator</a
+          >.
+        </p>
+      </div>
+    </div>
+
+    <!-- 📄 Sample Rx Modal -->
+    <div id="zenpep-sample-rx-modal" class="zenpep-modal hidden">
+      <div class="zenpep-modal-overlay"></div>
+      <div class="zenpep-modal-content sample-rx-modal-content">
+        <button id="closeSampleRxModal" class="zenpep-modal-close">
+          &times;
+        </button>
+
+        <div class="sample-rx-card">
+          <div class="rx-lines">
+            <div class="rx-line"></div>
+            <div class="rx-line"></div>
+            <div class="rx-line"></div>
+          </div>
+
+          <hr class="rx-divider" />
+
+          <p class="rx-heading">Example starting dose</p>
+          <p class="rx-subheading">
+            ZENPEP<sup>®</sup> (pancrelipase)<br /><span id="rx-dosage-pill"
+              >40K</span
+            >
+            lipase units
+          </p>
+
+          <div class="rx-info-container">
+            <p class="rx-info">
+              Pill(s) per meal: <span id="rx-info-per-meal">[1]</span>
+            </p>
+            <p class="rx-info">
+              Pill(s) per day: <span id="rx-info-per-day">[4]</span>
+            </p>
+            <p class="rx-info">
+              30-day total: <span id="rx-info-per-month">[120 pills]</span>
+            </p>
+          </div>
+
+          <p class="rx-note">
+            <strong>Note:</strong> Take with every meal and snack.<sup>1</sup>
+          </p>
+          <hr class="rx-divider" />
+        </div>
+      </div>
+    </div>
+
+    <!-- 🔒 Persistent ISI Footer Placeholder -->
+
+
+    <!-- Custom logic -->
+    <script src="components/dosing-calc.js"></script>
+  </body>
+</html>
