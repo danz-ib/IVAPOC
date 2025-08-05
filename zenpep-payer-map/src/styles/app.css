@@ -34,9 +34,13 @@ body {
     font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     background: var(--color-white);
     color: var(--color-black);
-    overflow: hidden; /* Prevent scrolling */
-    height: 100vh;
-    width: 100vw;
+    /* Force 13-inch iPad Pro landscape proportions */
+    width: 1366px;
+    height: 1024px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow: hidden;
 }
 
 /* Header Styling - ZENPEP Opening Page Style */

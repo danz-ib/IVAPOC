@@ -365,17 +365,7 @@ body {
     }
 }
 
-.hcphero-v8b-rgb-1-icon {
-    position: absolute;
-    width: 100%;
-    top: -1px;
-    right: 0%;
-    left: 0%;
-    max-width: 100%;
-    overflow: hidden;
-    height: 1024.9px;
-    object-fit: cover;
-}
+
 .noun-home-1570646-icon {
     width: 42px;
     height: 41.6px;
@@ -561,6 +551,7 @@ body {
     gap: 37px;
     font-size: var(--font-size-12);
     color: var(--color-black);
+    z-index: 3;
 }
 .layer-1-icon {
     position: absolute;
@@ -683,12 +674,13 @@ body {
 .ipad-pro-129-38 {
     width: 100%;
     position: relative;
-    background-color: var(--color-whitesmoke);
+    background-color: transparent;
     height: 1024px;
     overflow: hidden;
     text-align: left;
     font-size: var(--font-size-20);
     color: var(--color-white);
     font-family: var(--font-barlow);
+    z-index: 1;
 }
 
