@@ -8,9 +8,11 @@
   box-sizing: border-box;
   overflow-y: auto;
   border-left: 1px solid #ccc;
-  height: 90vh;
+  height: 1024px;
   position: absolute;
   right: 0;
+  top: 0;
+  z-index: 100;
 }
 
 
@@ -77,6 +79,7 @@ ul li {
   gap: 20px;
   color: var(--color-black);
   font-family: var(--font-open-sans);
+  z-index: 1000;
 }
 
 
@@ -99,6 +102,23 @@ color: white;
   gap: 0px;
   text-align: center;
   font-size: var(--font-size-20);
+}
+
+.nav-link {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  font-size: inherit;
+  display: inline-block;
+  line-height: 0;
+}
+
+.nav-link:hover .about-epi {
+  opacity: 0.8;
+}
+
+.about-epi:hover {
+  opacity: 0.8;
 }
 
 .frame-icon {
@@ -158,11 +178,11 @@ color: white;
     position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 1366px;
+  height: 1024px;
   z-index: 1000;
  
-  overflow-y: auto;
-  max-height: 100vh;
+  overflow: hidden;
   }
 
 
@@ -606,11 +626,11 @@ color: white;
 }
 
 #zenpep-scale-holder {
-   
-    position: fixed;
-    bottom: 0%;
-
-
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
 }
 
 .zenpep-calc__scale-wrapper {
@@ -674,8 +694,12 @@ color: white;
 
 #zenpep-screen-results {
   background: #f3f3f3;
- 
-  height: 100vh;
+  height: 1024px;
+  width: 1366px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding-top: 50px; /* Account for header height */
 }
 .lipase-title {
   text-align: center;
