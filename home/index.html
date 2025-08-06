@@ -1,11 +1,61 @@
 <!DOCTYPE html>
 <html>
 <head>
-  	<meta charset="utf-8">
-  	<meta name="viewport" content="initial-scale=1, width=device-width">
-  	<title>IVAPOC Home</title>
-  	<link rel="stylesheet" href="./styles/global.css" />
-  	<link rel="stylesheet" href="./styles/index.css" />
+	<meta charset="utf-8">
+	<meta name="viewport" content="initial-scale=1, width=device-width">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+	<meta name="apple-mobile-web-app-title" content="IVAPOC Demo">
+	<meta name="mobile-web-app-capable" content="yes">
+	<meta name="theme-color" content="#000000">
+	<title>IVAPOC Home</title>
+	<link rel="stylesheet" href="./styles/global.css" />
+	<link rel="stylesheet" href="./styles/index.css" />
+	<script>
+		// Force full-screen mode on iPad and prevent Safari UI from showing
+		(function() {
+			// Check if we're on iOS
+			const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+			
+			if (isIOS) {
+				// Request full-screen on page load
+				document.addEventListener('DOMContentLoaded', function() {
+					// Try to enter full-screen mode
+					if (document.documentElement.requestFullscreen) {
+						document.documentElement.requestFullscreen().catch(function(err) {
+							console.log('Full-screen request failed:', err);
+						});
+					}
+					
+					// Hide Safari UI elements
+					setTimeout(function() {
+						// Force landscape orientation and hide UI
+						if (screen.orientation && screen.orientation.lock) {
+							screen.orientation.lock('landscape').catch(function(err) {
+								console.log('Orientation lock failed:', err);
+							});
+						}
+					}, 100);
+				});
+				
+				// Prevent Safari UI from showing on navigation
+				window.addEventListener('beforeunload', function() {
+					// This helps maintain full-screen state
+				});
+				
+				// Handle orientation changes
+				window.addEventListener('orientationchange', function() {
+					setTimeout(function() {
+						if (document.documentElement.requestFullscreen) {
+							document.documentElement.requestFullscreen().catch(function(err) {
+								console.log('Full-screen request failed on orientation change:', err);
+							});
+						}
+					}, 100);
+				});
+			}
+		})();
+	</script>
 </head>
 <body>
   	<div class="ipad-pro-129-36">
