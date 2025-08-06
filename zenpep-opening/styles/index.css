@@ -163,6 +163,13 @@
     color: var(--color-black);
     font-family: var(--font-open-sans);
 }
+
+.group-parent a:link, .group-parent a:visited, .group-parent a:hover, .group-parent a:active, .group-parent img {
+padding: 0;
+margin: 0;
+
+}
+
 .frame-icon1 {
     position: absolute;
     top: 93px;

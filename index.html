@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="height=device-height, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="IVAPOC Demo">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="#000000">
+    <title>IVAPOC Demo</title>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html, body {
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+            background: white;
+        }
+        
+        iframe {
+            width: 100vw;
+            height: 100vh;
+            border: none;
+            margin: 0;
+            padding: 0;
+            display: block;
+            object-fit: contain;
+            max-width: 100vw;
+            max-height: 100vh;
+        }
+        
+        /* Force iframe content to fit */
+        iframe {
+            transform: scale(1);
+            transform-origin: top left;
+        }
+    </style>
+    
+    <script>
+        // Force full-screen mode on iPad and prevent Safari UI from showing
+        (function() {
+            // Check if we're on iOS
+            const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+            
+            if (isIOS) {
+                // Request full-screen on page load
+                document.addEventListener('DOMContentLoaded', function() {
+                    // Try to enter full-screen mode
+                    if (document.documentElement.requestFullscreen) {
+                        document.documentElement.requestFullscreen().catch(function(err) {
+                            console.log('Full-screen request failed:', err);
+                        });
+                    }
+                    
+                    // Hide Safari UI elements
+                    setTimeout(function() {
+                        // Force landscape orientation and hide UI
+                        if (screen.orientation && screen.orientation.lock) {
+                            screen.orientation.lock('landscape').catch(function(err) {
+                                console.log('Orientation lock failed:', err);
+                            });
+                        }
+                    }, 100);
+                });
+                
+                // Prevent Safari UI from showing on navigation
+                window.addEventListener('beforeunload', function() {
+                    // This helps maintain full-screen state
+                });
+                
+                // Handle orientation changes
+                window.addEventListener('orientationchange', function() {
+                    setTimeout(function() {
+                        if (document.documentElement.requestFullscreen) {
+                            document.documentElement.requestFullscreen().catch(function(err) {
+                                console.log('Full-screen request failed on orientation change:', err);
+                            });
+                        }
+                    }, 100);
+                });
+            }
+            
+            // Force iframe to fill viewport
+            function resizeIframe() {
+                const iframe = document.querySelector('iframe');
+                if (iframe) {
+                    iframe.style.width = window.innerWidth + 'px';
+                    iframe.style.height = window.innerHeight + 'px';
+                }
+            }
+            
+            // Inject CSS into iframe to constrain content
+            function injectIframeCSS() {
+                const iframe = document.querySelector('iframe');
+                if (iframe && iframe.contentDocument) {
+                    const style = iframe.contentDocument.createElement('style');
+                    style.textContent = `
+                        html, body {
+                            width: 100vw !important;
+                            height: 100vh !important;
+                            overflow: hidden !important;
+                            margin: 0 !important;
+                            padding: 0 !important;
+                        }
+                        * {
+                            max-width: 100vw !important;
+                            max-height: 100vh !important;
+                        }
+                    `;
+                    iframe.contentDocument.head.appendChild(style);
+                }
+            }
+            
+            // Wait for iframe to load then inject CSS
+            document.querySelector('iframe').addEventListener('load', function() {
+                setTimeout(injectIframeCSS, 100);
+            });
+            
+            window.addEventListener('resize', resizeIframe);
+            window.addEventListener('load', resizeIframe);
+            document.addEventListener('DOMContentLoaded', resizeIframe);
+        })();
+    </script>
+</head>
+<body>
+    <iframe src="home/index.html" frameborder="0"></iframe>
+</body>
+</html> 

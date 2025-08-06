@@ -28,12 +28,8 @@ body {
 body {
     margin: 0;
     line-height: normal;
-    /* Force 13-inch iPad Pro landscape proportions */
-    width: 1366px;
-    height: 1024px;
-    position: fixed;
-    top: 0;
-    left: 0;
+    width: 100vw;
+    height: 100vh;
     overflow: hidden;
     background: white;
 }
@@ -45,6 +41,7 @@ body {
     --color-midnightblue: #001b70;
     --color-lightskyblue: #4bc8f5;
     --color-khaki: #f0e68c;
+    --color-purple: #9f248b;
     
     /* Font */
     --font-barlow: 'Barlow', sans-serif;

@@ -79,15 +79,20 @@ function initApp() {
 // Load the US SVG map and apply heatmap coloring
 async function loadSVGMap() {
   try {
+    console.log('Loading SVG map...');
     const response = await fetch('assets/us.svg');
     const svgText = await response.text();
+    console.log('SVG loaded, length:', svgText.length);
     
     // Create a container div and insert the SVG
     const mapContainer = document.querySelector('.map-wrapper');
+    console.log('Map container found:', !!mapContainer);
     mapContainer.innerHTML = svgText;
     
     // Get the SVG element and make it responsive
     const svgElement = mapContainer.querySelector('svg');
+    console.log('SVG element found:', !!svgElement);
+    
     if (svgElement) {
       svgElement.setAttribute('width', '100%');
       svgElement.setAttribute('height', 'auto');
@@ -100,6 +105,8 @@ async function loadSVGMap() {
         .map-wrapper path {
           cursor: pointer;
           transition: all 0.2s ease;
+          pointer-events: auto !important;
+          z-index: 1;
         }
         .map-wrapper path:hover {
           opacity: 0.8;
@@ -110,9 +117,13 @@ async function loadSVGMap() {
           stroke-width: 3;
           filter: drop-shadow(0 0 8px rgba(159, 36, 139, 0.6));
         }
+        .map-wrapper svg {
+          pointer-events: auto !important;
+        }
       `;
       document.head.appendChild(style);
       
+      console.log('Applying heatmap coloring...');
       // Apply heatmap coloring and add event listeners
       applyHeatmapColoring();
       addStateEventListeners();
@@ -130,11 +141,15 @@ async function loadSVGMap() {
 // Apply heatmap coloring based on coverage data
 function applyHeatmapColoring() {
   const paths = document.querySelectorAll('.map-wrapper path');
+  console.log('Applying heatmap coloring to', paths.length, 'paths');
   
   paths.forEach(path => {
     const stateId = path.id;
+    console.log('Processing path with ID:', stateId);
+    
     if (stateId && payerData[stateId]) {
       const coverage = payerData[stateId].coverage;
+      console.log('State', stateId, 'has coverage:', coverage);
       
       // Determine coverage class based on percentage
       let coverageClass;
@@ -151,12 +166,14 @@ function applyHeatmapColoring() {
       path.setAttribute('stroke', '#fff');
       path.setAttribute('stroke-width', '1');
       path.classList.add('state-path');
+      console.log('Applied', coverageClass, 'to', stateId);
     } else if (stateId && stateId.length === 2) {
       // States without data get default styling
       path.classList.add('coverage-default');
       path.setAttribute('stroke', '#fff');
       path.setAttribute('stroke-width', '1');
       path.classList.add('state-path');
+      console.log('Applied default styling to', stateId);
     }
   });
 }
@@ -164,18 +181,47 @@ function applyHeatmapColoring() {
 // Add event listeners to state paths
 function addStateEventListeners() {
   const paths = document.querySelectorAll('.map-wrapper path');
+  console.log('Found paths:', paths.length);
   
   paths.forEach(path => {
     const stateId = path.id;
+    console.log('Processing path with ID:', stateId);
+    
     if (stateId && payerData[stateId]) {
+      console.log('Adding event listeners for state:', stateId);
+      
+      // Ensure pointer events are enabled
+      path.style.pointerEvents = 'auto';
+      path.style.cursor = 'pointer';
       
       // Click event
-      path.addEventListener('click', () => {
+      path.addEventListener('click', (event) => {
+        console.log('State clicked:', stateId);
+        event.preventDefault();
+        event.stopPropagation();
         selectState(stateId);
         updateDropdownSelection(stateId);
       });
       
-      // Hover events for tooltip
+      // Touch events for mobile (more reliable than click on touch devices)
+      path.addEventListener('touchstart', (event) => {
+        event.preventDefault();
+        console.log('Touch start on state:', stateId);
+        showStateTooltip(event, stateId);
+      });
+      
+      path.addEventListener('touchend', (event) => {
+        event.preventDefault();
+        console.log('Touch end on state:', stateId);
+        // Trigger state selection on touch end
+        selectState(stateId);
+        updateDropdownSelection(stateId);
+        setTimeout(() => {
+          hideStateTooltip();
+        }, 2000);
+      });
+      
+      // Hover events for tooltip (desktop only)
       path.addEventListener('mouseenter', (event) => {
         showStateTooltip(event, stateId);
       });
@@ -184,19 +230,36 @@ function addStateEventListeners() {
         hideStateTooltip();
       });
       
-      // Touch events for mobile
-      path.addEventListener('touchstart', (event) => {
+      // Add mousedown event as backup
+      path.addEventListener('mousedown', (event) => {
+        console.log('Mouse down on state:', stateId);
         event.preventDefault();
-        showStateTooltip(event, stateId);
-      });
-      
-      path.addEventListener('touchend', () => {
-        setTimeout(() => {
-          hideStateTooltip();
-        }, 2000);
       });
     }
   });
+  
+  // Add event delegation to the map container as backup
+  const mapContainer = document.querySelector('.map-wrapper');
+  if (mapContainer) {
+    mapContainer.addEventListener('click', (event) => {
+      const path = event.target.closest('path');
+      if (path && path.id && payerData[path.id]) {
+        console.log('Delegated click on state:', path.id);
+        selectState(path.id);
+        updateDropdownSelection(path.id);
+      }
+    });
+    
+    mapContainer.addEventListener('touchstart', (event) => {
+      const path = event.target.closest('path');
+      if (path && path.id && payerData[path.id]) {
+        console.log('Delegated touch on state:', path.id);
+        event.preventDefault();
+        selectState(path.id);
+        updateDropdownSelection(path.id);
+      }
+    });
+  }
 }
 
 // Show tooltip with state information
@@ -412,8 +475,7 @@ function navigateToSection(section) {
     'dosing': 'Dosing information would be displayed here',
     'coverage-savings': 'Coverage & savings information is currently displayed',
     'patient-profiles': 'Patient profiles would be displayed here',
-    'clinical-data': 'Clinical data would be displayed here',
-    'zenpep-simple-starts': 'ZENPEP for Simple Starts would be displayed here'
+    'clinical-data': 'Clinical data would be displayed here'
   };
   
   if (section !== 'coverage-savings') {
