@@ -276,7 +276,7 @@
     justify-content: space-between;
     padding: 13px 56px;
     box-sizing: border-box;
-    gap: 70px;
+    gap: 64px;
     text-align: center;
     font-size: var(--font-size-20);
     z-index: 100;
@@ -290,8 +290,7 @@
     text-decoration: none;
     font-family: var(--font-open-sans);
     white-space: nowrap;
-    margin: 0 15px;
-    font-weight: 500;
+    margin: 0 10px;
 }
 
 .about-epi:hover {
