@@ -12,6 +12,7 @@
 --color-darkgray: #333;
 --color-gray: #666;
 --color-purple: #9f248b;
+--color-firebrick: #c61d1d;
 /* BorderRadius */
 --br-8: 8px;
 /* Font */
@@ -62,7 +63,7 @@ body {
     justify-content: flex-start;
     padding: 0px 26px 0px 0px;
     box-sizing: border-box;
-    gap: 20px;
+    gap: 10px;
     color: var(--color-black);
     font-family: var(--font-open-sans);
     z-index: 100;
@@ -110,17 +111,22 @@ body {
 }
 
 .see-accompanying-full {
-    position: absolute;
-    top: 0px;
-    right: 0px;
+    position: relative;
+    text-align: center;
+    color: var(--color-black);
     font-size: 12px;
 }
 
 .see-accompanying-full-prescrib-wrapper {
-    width: 625px;
+    width: 250px;
     position: relative;
-    height: 16px;
-    text-align: right;
+    height: auto;
+    text-align: center;
+    white-space: nowrap;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 /* Bottom Navigation - ZENPEP Opening Page Style */
@@ -133,6 +139,28 @@ body {
 }
 
 .about-epi:hover {
+    opacity: 0.8;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: white !important;
+    cursor: pointer;
+    font-size: inherit;
+    display: inline-block;
+    line-height: 0;
+}
+
+.nav-link:visited {
+    color: white !important;
+}
+
+.nav-link:hover {
+    color: white !important;
+    opacity: 0.8;
+}
+
+.nav-link:hover .about-epi {
     opacity: 0.8;
 }
 
@@ -153,6 +181,20 @@ body {
     text-align: center;
     font-size: var(--font-size-20);
     z-index: 100;
+}
+
+.demo-disclaimer {
+    background-color: var(--color-firebrick);
+    color: var(--color-white);
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-size: 18px;
+    font-family: var(--font-open-sans);
+    font-weight: normal;
+    text-align: center;
+    white-space: nowrap;
+    flex-shrink: 0;
+    margin: 0 2px;
 }
 
 .nav-icon {

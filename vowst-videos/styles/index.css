@@ -55,15 +55,23 @@
     white-space: pre-wrap;
 }
 .tap-here-for-container {
-    width: 841px;
+    width: 400px;
     position: relative;
     line-height: 14px;
     display: inline-block;
     flex-shrink: 0;
 }
 .see-accompanying-full {
-    position: relative;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
     text-align: right;
+    font-size: var(--font-size-14);
+    font-weight: 600;
+    color: var(--color-midnightblue);
+    text-decoration: underline;
+    cursor: pointer;
 }
 .group-parent {
     position: absolute;
@@ -79,9 +87,23 @@
     align-items: center;
     justify-content: flex-start;
     padding: 0px 26px 0px 0px;
-    gap: 37px;
+    gap: 10px;
     font-size: var(--font-size-12);
     color: var(--color-black);
+}
+
+.demo-disclaimer {
+    background-color: var(--color-firebrick);
+    color: var(--color-white);
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-size: 18px;
+    font-family: var(--font-barlow);
+    font-weight: normal;
+    text-align: center;
+    white-space: nowrap;
+    flex-shrink: 0;
+    margin: 0 2px;
 }
 .video-placeholder-icon {
     position: absolute;
@@ -388,9 +410,23 @@
     justify-content: space-between;
     padding: 13px 40px;
     box-sizing: border-box;
-    gap: 0px;
+    gap: 26px;
     text-align: center;
     font-size: var(--font-size-20);
+}
+
+.email-link {
+    margin-left: auto;
+}
+
+.email-icon {
+    width: 24px;
+    height: 24px;
+    transition: opacity 0.2s;
+}
+
+.email-icon:hover {
+    opacity: 0.8;
 }
 .group-icon {
     position: absolute;

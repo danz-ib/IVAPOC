@@ -63,8 +63,8 @@
 </head>
 <body>
   	
-  	<div class="ipad-pro-129-43">
-    		<div class="ipad-pro-129-43-child">
+  		<div class="ipad-pro-129-43">
+		<div class="ipad-pro-129-43-child">
     		</div>
     		<div class="vowst-was-studied-in-a-rigorou-parent">
       			<b class="vowst-was-studied-container">VOWST was studied in a rigorous phase 3 clinical development program
@@ -176,19 +176,20 @@
         				</div>
       			</div>
     		</div>
-    		<div class="group-parent">
-      			<a href="../home/index.html" class="nav-link" onclick="navigateToHome(event)">
-      				<img class="frame-child" alt="" src="assets/Group 75.svg">
-      			</a>
-      			
-      			<img class="union-icon" alt="" src="assets/Union.svg">
-      			
-      			<div class="tap-here-for-container">
-        				<p class="tap-here">Tap  here for indications and additional Important Safety Information,</p>
-        				<p class="including-boxed-warning">including BOXED WARNING on Serious Infections and Malignancy</p>
-      			</div>
-      			<div class="see-accompanying-full">See accompanying Full Prescribing Information</div>
-    		</div>
+    				<div class="group-parent">
+			<a href="../home/index.html" class="nav-link" onclick="navigateToHome(event)">
+				<img class="frame-child" alt="" src="assets/Group 75.svg">
+			</a>
+			
+			<img class="union-icon" alt="" src="assets/Union.svg">
+			
+			<div class="tap-here-for-container">
+				<p class="tap-here">Tap  here for indications and additional Important Safety Information,</p>
+				<p class="including-boxed-warning">including BOXED WARNING on Serious Infections and Malignancy</p>
+			</div>
+			<div class="demo-disclaimer">Not approved for use. Working demo only.</div>
+			<div class="see-accompanying-full">See accompanying Full Prescribing Information</div>
+		</div>
     		<div class="group-container">
       			<div class="tabs-wrapper">
         				<div class="tabs">
@@ -361,7 +362,9 @@
       			</a>
       			<img class="line-icon" alt="" src="assets/Line.svg">
       			
-      			<div class="about-rcdi">1-2 Gut Punch with VOWST</div>
+      			<a href="../vowst-rte/index.html" class="nav-link email-link" onclick="navigateToRTE(event)">
+      				<img src="assets/email-icon.svg" alt="Email" class="email-icon">
+      			</a>
     		</div>
   	</div>
   		
@@ -375,6 +378,15 @@
 			}
 		}
 		
+		function navigateToRTE(event) {
+			event.preventDefault();
+			if (typeof com !== 'undefined' && com.veeva && com.veeva.clm) {
+				com.veeva.clm.navigateToSlide('vowst-rte/index.html');
+			} else {
+				window.location.href = '../vowst-rte/index.html';
+			}
+		}
+		
 		function navigateToVideos(event) {
 			event.preventDefault();
 			if (typeof com !== 'undefined' && com.veeva && com.veeva.clm) {
@@ -383,6 +395,8 @@
 				window.location.href = '../vowst-videos/index.html';
 			}
 		}
+		
+
 	</script>
 </body>
 </html>

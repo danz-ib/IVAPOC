@@ -1,0 +1,26 @@
+
+body {
+    margin: 0;
+    line-height: normal;
+}
+
+
+:root {
+    
+    /* Color */
+    --color-whitesmoke: #ededed;
+    --color-black: #000;
+    --color-white: #fff;
+    --color-darkslateblue: #193176;
+    --color-steelblue: #009bcf;
+    --color-firebrick: #c61d1d;
+    
+    /* Font */
+    --font-arial: Arial;
+    --font-open-sans: Open Sans;
+    
+    /* FontSize */
+    --font-size-16: 16px;
+    --font-size-18: 18px;
+    
+}

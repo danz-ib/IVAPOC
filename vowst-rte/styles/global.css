@@ -1,0 +1,75 @@
+/* Font Face Declarations */
+@font-face {
+    font-family: 'Mensura Slab Black';
+    src: url('../assets/Mensura/webFonts/MensuraSlabBlack/font.woff2') format('woff2'),
+         url('../assets/Mensura/webFonts/MensuraSlabBlack/font.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Mensura Slab Black Italic';
+    src: url('../assets/Mensura/webFonts/MensuraSlabBlackItalic/font.woff2') format('woff2'),
+         url('../assets/Mensura/webFonts/MensuraSlabBlackItalic/font.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+:root {
+    /* Color */
+    --color-mediumblue-200: rgba(3, 54, 255, 0.05);
+    --color-mediumblue-100: #0336ff;
+    --color-white: #fff;
+    --color-midnightblue: #191970;
+    --color-black: #000;
+    --color-lightskyblue: #4bc8f5;
+    --color-firebrick: #c61d1d;
+    --color-thistle: #cea2c8;
+    
+    /* BorderRadius */
+    --br-8: 8px;
+    
+    /* Font */
+    --font-mensura-slab-black: 'Mensura Slab Black', serif;
+    --font-mensura-slab-black-italic: 'Mensura Slab Black Italic', serif;
+    --font-barlow: 'Barlow', sans-serif;
+    --font-barlow-semi-condensed: 'Barlow Semi Condensed', sans-serif;
+    --font-open-sans: 'Open Sans', sans-serif;
+    
+    /* FontSize */
+    --font-size-12: 12px;
+    --font-size-14: 14px;
+    --font-size-16: 16px;
+    --font-size-18: 18px;
+    --font-size-20: 20px;
+    --font-size-32: 32px;
+    --font-size-40: 40px;
+    --font-size-48: 48px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background: white;
+    margin: 0;
+    padding: 0;
+    display: block;
+    font-family: var(--font-barlow);
+}
+
+.ipad-pro-129-40 {
+    position: relative;
+    width: 1366px;
+    height: 1024px;
+    background-color: var(--color-white);
+    overflow: hidden;
+}

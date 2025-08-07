@@ -1,0 +1,285 @@
+.zenpep-rte-page-child {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 1366px;
+    height: 1024px;
+}
+.zenpep-rte-page-item {
+    position: absolute;
+    top: 49px;
+    left: 0px;
+    background-color: var(--color-thistle-200);
+    border: 0.5px solid var(--color-purple-200);
+    box-sizing: border-box;
+    width: 462px;
+    height: 911px;
+}
+.share-resources-with {
+    position: absolute;
+    top: 137px;
+    left: 85px;
+    font-size: 48px;
+    display: inline-block;
+    font-family: var(--font-poppins);
+    color: var(--color-purple-200);
+    width: 327px;
+    height: 201px;
+}
+.select-what-to {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    font-size: var(--font-size-32);
+    line-height: 24px;
+    font-family: var(--font-poppins);
+    color: var(--color-purple-200);
+}
+.dosing-calculator {
+    position: absolute;
+    top: 0px;
+    left: 46px;
+}
+.group-child {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    border-radius: 50%;
+    background-color: var(--color-whitesmoke);
+    border: 1px solid var(--color-purple-200);
+    box-sizing: border-box;
+    width: 25px;
+    height: 25px;
+}
+.dosing-calculator-parent {
+    position: absolute;
+    top: 60px;
+    left: 0px;
+    width: 205px;
+    height: 25px;
+}
+.payer-coverage-map-parent {
+    position: absolute;
+    top: 110px;
+    left: 0px;
+    width: 230px;
+    height: 25px;
+}
+.xxxxxxxx-parent {
+    position: absolute;
+    top: 160px;
+    left: 0px;
+    width: 130px;
+    height: 25px;
+}
+.xxxxxxxx-group {
+    position: absolute;
+    top: 210px;
+    left: 0px;
+    width: 130px;
+    height: 25px;
+}
+.select-what-to-share-parent {
+    position: absolute;
+    top: 167px;
+    left: 578px;
+    width: 343px;
+    height: 235px;
+}
+.rectangle-div {
+    position: absolute;
+    height: 100%;
+    width: 76.09%;
+    top: 0%;
+    right: 0%;
+    bottom: 0%;
+    left: 23.91%;
+    border-radius: var(--br-8);
+    background-color: var(--color-thistle-100);
+}
+.first-name {
+    position: absolute;
+    top: 8px;
+    left: 0px;
+}
+.rectangle-parent {
+    position: absolute;
+    height: 19.05%;
+    width: 90.41%;
+    top: 27.62%;
+    right: 9.59%;
+    bottom: 53.33%;
+    left: 0%;
+}
+.rectangle-group {
+    position: absolute;
+    height: 19.05%;
+    width: 90.41%;
+    top: 54.29%;
+    right: 9.59%;
+    bottom: 26.67%;
+    left: 0%;
+}
+.rectangle-container {
+    position: absolute;
+    height: 19.05%;
+    width: 90.41%;
+    top: 80.95%;
+    right: 9.59%;
+    bottom: 0%;
+    left: 0%;
+}
+.who-are-you-sharing-them-with-parent {
+    position: absolute;
+    top: 473px;
+    left: 578px;
+    width: 532px;
+    height: 210px;
+}
+.group-child3 {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0%;
+    right: 0%;
+    bottom: 0%;
+    left: 0%;
+    border-radius: var(--br-8);
+    background-color: var(--color-darkslateblue);
+}
+.send {
+    position: absolute;
+    top: 8px;
+    left: 161px;
+}
+.group-div {
+    position: absolute;
+    height: 3.91%;
+    width: 26.79%;
+    top: 75.88%;
+    right: 30.89%;
+    bottom: 20.21%;
+    left: 42.31%;
+    text-align: center;
+    color: var(--color-white);
+}
+.about-epi {
+    position: relative;
+}
+.email-icon {
+    width: 40px;
+    position: relative;
+    height: 27.5px;
+}
+.zenpep-nav {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    background-color: var(--color-purple-100);
+    width: 1366px;
+    height: 64px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 13px 56px;
+    box-sizing: border-box;
+    gap: 0px;
+    text-align: center;
+    font-size: var(--font-size-20);
+    color: var(--color-white);
+    font-family: var(--font-poppins);
+}
+.zenpep-top-bar-child {
+    width: 96px;
+    position: relative;
+    height: 50px;
+    z-index: 0;
+}
+.zenpep-top-bar-item {
+    width: 95px;
+    position: relative;
+    height: 10px;
+    object-fit: cover;
+    z-index: 1;
+}
+.tap-here {
+    margin: 0;
+    white-space: pre-wrap;
+}
+.including-boxed-warning {
+    margin: 0;
+}
+.tap-here-for-container {
+    width: 442px;
+    position: relative;
+    line-height: 14px;
+    display: inline-block;
+    flex-shrink: 0;
+    z-index: 2;
+}
+.see-accompanying-full {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
+.see-accompanying-full-prescrib-wrapper {
+    width: 625px;
+    position: relative;
+    height: 16px;
+    z-index: 3;
+    text-align: right;
+}
+.group-child4 {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background-color: var(--color-firebrick);
+    width: 406px;
+    height: 51px;
+}
+.not-approved-for {
+    position: absolute;
+    top: 12.07px;
+    left: 11.12px;
+}
+.rectangle-parent1 {
+    width: 406px;
+    position: absolute;
+    margin: 0 !important;
+    top: 0px;
+    left: 634px;
+    height: 51px;
+    z-index: 4;
+    text-align: center;
+    font-size: 19.31px;
+    color: var(--color-white);
+}
+.zenpep-top-bar {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background-color: var(--color-white);
+    width: 1366px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0px 26px 0px 0px;
+    box-sizing: border-box;
+    gap: 20px;
+    font-size: var(--font-size-12);
+}
+.zenpep-rte-page {
+    width: 100%;
+    position: relative;
+    background-color: var(--color-white);
+    height: 1024px;
+    overflow: hidden;
+    text-align: left;
+    font-size: var(--font-size-18);
+    color: var(--color-black);
+    font-family: var(--font-open-sans);
+}
+

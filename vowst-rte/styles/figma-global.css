@@ -1,0 +1,32 @@
+
+body {
+    margin: 0;
+    line-height: normal;
+}
+
+
+:root {
+    
+    /* Color */
+    --color-mediumblue-200: rgba(3, 54, 255, 0.05);
+    --color-mediumblue-100: #0336ff;
+    --color-white: #fff;
+    --color-midnightblue: #001b70;
+    --color-black: #000;
+    --color-lightskyblue: #4bc8f5;
+    --color-firebrick: #c61d1d;
+    
+    /* BorderRadius */
+    --br-8: 8px;
+    
+    /* Font */
+    --font-mensura-slab-black: Mensura Slab Black;
+    --font-barlow: Barlow;
+    --font-open-sans: Open Sans;
+    
+    /* FontSize */
+    --font-size-12: 12px;
+    --font-size-18: 18px;
+    --font-size-32: 32px;
+    
+}

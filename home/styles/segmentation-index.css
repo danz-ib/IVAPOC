@@ -1,0 +1,553 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--color-whitesmoke);
+    overflow-x: hidden;
+}
+
+/* Main container */
+.segmentation-survey-1 {
+    width: 100%;
+    height: 100vh;
+    background-color: var(--color-whitesmoke);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Red banner at top */
+.rectangle-parent1 {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 406px;
+    height: 51px;
+    background-color: var(--color-firebrick);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+}
+
+.not-approved-for {
+    color: var(--color-white);
+    font-size: 19.31px;
+    font-family: var(--font-open-sans);
+    font-weight: 400;
+}
+
+/* Navigation icons */
+.noun-home-1570646-icon {
+    position: absolute;
+    top: 60px;
+    left: 57px;
+    width: 42px;
+    height: 41.6px;
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+.noun-menu-6829015-icon {
+    position: absolute;
+    top: 60px;
+    left: 122px;
+    width: 46.2px;
+    height: 45.8px;
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+/* NHS Logo */
+.nhs-logo-rgb-1-icon {
+    position: absolute;
+    top: 60px;
+    right: 57px;
+    width: 189px;
+    height: 51.2px;
+}
+
+/* Main button container */
+.vowst-button-parent {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 1060px; /* 500px + 60px gap + 500px = 1060px */
+    height: 438px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+}
+
+/* Product buttons */
+.vowst-button-icon, .zenpep-button-icon {
+    width: 500px;
+    height: 438px;
+    cursor: pointer;
+    transition: none; /* Remove any transitions that cause jumping */
+    flex-shrink: 0; /* Prevent buttons from shrinking */
+}
+
+/* Remove hover effects that cause jumping */
+.vowst-button-icon:hover, .zenpep-button-icon:hover {
+    transform: none;
+}
+
+/* Segmentation survey link at bottom */
+.group-parent {
+    position: absolute;
+    bottom: 120px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.segmentation-survey-parent {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.segmentation-survey {
+    color: var(--color-black);
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.group-child {
+    width: 17px;
+    height: 21px;
+}
+
+.group-item {
+    width: 68px;
+    height: 62.3px;
+}
+
+/* Survey modal content - initially hidden but can be shown */
+.rectangle-parent {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--color-white);
+    z-index: 1000;
+    overflow-y: auto;
+}
+
+/* Survey Full Screen Styles */
+.rectangle-group {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px;
+    text-align: center;
+    color: var(--color-black);
+    background-color: var(--color-white);
+    box-sizing: border-box;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Survey Warning Banner */
+.survey-warning-banner {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 406px;
+    height: 51px;
+    background-color: var(--color-firebrick);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1001;
+}
+
+.survey-warning-text {
+    color: var(--color-white);
+    font-size: 19.31px;
+    font-family: var(--font-open-sans);
+    font-weight: 400;
+}
+
+.group-inner {
+    border-radius: 30px;
+    border: 1px solid var(--color-darkslateblue);
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+}
+
+/* Survey Questions Container */
+.frame-parent {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+/* Left side questions */
+.my-practice-lacks-the-resource-parent {
+    width: 244px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.my-practice-lacks-the-container,
+.i-never-have-enough-time,
+.i-prefer-to {
+    line-height: 120%;
+    font-size: var(--font-size-16);
+    color: var(--color-black);
+}
+
+/* Right side questions */
+.my-practice-is-well-equipped-t-parent {
+    width: 254px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.my-practice-is-well-equipped-t,
+.i-always-have-enough-time,
+.i-am-willing {
+    line-height: 120%;
+    font-size: var(--font-size-16);
+    color: var(--color-black);
+}
+
+/* Radio button groups */
+.frame-group {
+    width: 507px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.ellipse-parent {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0px;
+}
+
+/* Radio button styles */
+.frame-item {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: var(--color-white);
+    border: 1px solid var(--color-darkslateblue);
+    box-sizing: border-box;
+    cursor: pointer;
+    position: relative;
+}
+
+.frame-child2 {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: var(--color-steelblue);
+    border: 1px solid var(--color-darkslateblue);
+    box-sizing: border-box;
+    cursor: pointer;
+    position: relative;
+}
+
+/* Scale numbers container */
+.rectangle-container {
+    position: relative;
+    width: 1084px;
+    height: 42px;
+    margin: 0 auto 40px auto;
+    color: var(--color-white);
+}
+
+.rectangle-div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: var(--color-darkslateblue);
+    width: 100%;
+    height: 100%;
+}
+
+/* Scale numbers positioning - positioned above radio buttons */
+.b, .b1, .b2, .b3, .b4, .b5, .b6 {
+    position: absolute;
+    top: -25px; /* Position above the radio buttons */
+    line-height: 120%;
+    font-weight: bold;
+    color: var(--color-darkslateblue);
+    font-size: 14px;
+}
+
+.b { left: 314px; }
+.b1 { left: 387px; }
+.b2 { left: 460px; }
+.b3 { left: 533px; }
+.b4 { left: 606px; }
+.b5 { left: 679px; }
+.b6 { left: 752px; }
+
+/* Submit button */
+.group-div {
+    position: relative;
+    width: 296px;
+    height: 42px;
+    margin: 0 auto;
+    color: var(--color-white);
+}
+
+.group-child1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 33px;
+    background-color: var(--color-darkslateblue);
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.submit-survey-btn {
+    position: absolute;
+    top: 10px;
+    left: 81px;
+    line-height: 120%;
+    font-weight: bold;
+    background: none;
+    border: none;
+    color: var(--color-white);
+    cursor: pointer;
+    font-size: inherit;
+    z-index: 20;
+    width: auto;
+    height: auto;
+    padding: 0;
+}
+
+/* Instructions */
+.please-indicate-on-container {
+    position: absolute;
+    top: 46px;
+    left: 51px;
+    font-size: 24px;
+    line-height: 100%;
+    font-weight: 700;
+    color: var(--color-black);
+}
+
+/* Exit survey button */
+.exit-survey {
+    position: absolute;
+    top: 33px;
+    right: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 20px;
+    cursor: pointer;
+}
+
+.close-icon {
+    width: 46px;
+    height: 46px;
+}
+
+.exit-survey1 {
+    line-height: 100%;
+    font-weight: 700;
+    color: var(--color-darkslateblue);
+}
+
+/* Remove preselection by ensuring no radio buttons are checked by default */
+.frame-item:before,
+.frame-child2:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    background-color: transparent;
+}
+
+.frame-child2:before {
+    background-color: var(--color-steelblue);
+}
+
+/* Results Screen Styles */
+.results-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--color-white);
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+/* Results Warning Banner */
+.results-warning-banner {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 406px;
+    height: 51px;
+    background-color: var(--color-firebrick);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1001;
+}
+
+.results-warning-text {
+    color: var(--color-white);
+    font-size: 19.31px;
+    font-family: var(--font-open-sans);
+    font-weight: 400;
+}
+
+.results-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 60px;
+    box-sizing: border-box;
+}
+
+.results-header {
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.results-title {
+    font-size: 28px;
+    font-weight: 700;
+    font-style: italic;
+    color: var(--color-black);
+    margin-bottom: 20px;
+}
+
+.segment-display {
+    background-color: var(--color-steelblue);
+    border-radius: 15px;
+    padding: 40px 60px;
+    margin-bottom: 40px;
+    text-align: center;
+    min-width: 400px;
+}
+
+.segment-name {
+    font-size: 24px;
+    font-weight: 400;
+    color: var(--color-white);
+    margin-bottom: 10px;
+}
+
+.segment-description {
+    font-size: 32px;
+    font-weight: 700;
+    font-style: italic;
+    color: var(--color-white);
+    line-height: 1.2;
+}
+
+.finish-button-container {
+    margin-top: 20px;
+}
+
+.finish-button {
+    background-color: var(--color-darkslateblue);
+    color: var(--color-white);
+    border: none;
+    border-radius: 25px;
+    padding: 12px 40px;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.finish-button:hover {
+    background-color: #142a5e;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 1366px) {
+    .vowst-button-parent {
+        width: 1000px; /* 480px + 40px gap + 480px = 1000px */
+        gap: 40px;
+    }
+    
+    .vowst-button-icon, .zenpep-button-icon {
+        width: 480px;
+        height: 355px;
+        flex-shrink: 0;
+    }
+    
+    .nhs-logo-rgb-1-icon {
+        width: 160px;
+        height: 43px;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .vowst-button-parent {
+        width: 790px; /* 380px + 30px gap + 380px = 790px */
+        gap: 30px;
+    }
+    
+    .vowst-button-icon, .zenpep-button-icon {
+        width: 380px;
+        height: 280px;
+        flex-shrink: 0;
+    }
+    
+    .noun-home-1570646-icon,
+    .noun-menu-6829015-icon {
+        width: 35px;
+        height: 35px;
+    }
+    
+    .nhs-logo-rgb-1-icon {
+        width: 140px;
+        height: 38px;
+    }
+}
+

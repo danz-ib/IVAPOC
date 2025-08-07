@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="VOWST RTE">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="#000000">
+    <title>VOWST RTE</title>
+    <link rel="stylesheet" href="styles/global.css" />
+    <link rel="stylesheet" href="styles/index.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Mensura+Slab+Black:wght@400&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;600;700&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400&display=swap" />
+</head>
+<body>
+    <div class="ipad-pro-129-40">
+        <!-- Header -->
+        <div class="group-parent">
+            <a href="../home/index.html" class="nav-link" onclick="navigateToHome(event)">
+                <img class="frame-child" alt="" src="assets/Group 75.svg">
+            </a>
+            
+            <img class="union-icon" alt="" src="assets/Union.svg">
+            
+            <div class="tap-here-for-container">
+                <p class="tap-here">Tap here for indications and additional Important Safety Information,</p>
+                <p class="as-early-as-first-c-diff-recu">including BOXED WARNING on Serious Infections and Malignancy</p>
+            </div>
+            <div class="demo-disclaimer">Not approved for use. Working demo only.</div>
+            <div class="see-accompanying-full">See accompanying Full Prescribing Information</div>
+        </div>
+
+        <!-- Main Content Area - Vowst Design -->
+        <div class="vowst-rte-page">
+            <div class="rte-container">
+                <div class="rte-left-panel">
+                    <h1 class="share-resources-with">Share resources with HCPs.</h1>
+                </div>
+                
+                <div class="rte-right-panel">
+                    <div class="select-what-to-share-section">
+                        <h2 class="select-what-to">Select what to share:</h2>
+                        <div class="resource-options">
+                            <div class="resource-option">
+                                <input type="radio" id="dosing-calc" name="resources" class="resource-radio">
+                                <label for="dosing-calc" class="resource-label">Dosing Calculator</label>
+                            </div>
+                            <div class="resource-option">
+                                <input type="radio" id="payer-map" name="resources" class="resource-radio">
+                                <label for="payer-map" class="resource-label">Payer Coverage Map</label>
+                            </div>
+                            <div class="resource-option">
+                                <input type="radio" id="resource3" name="resources" class="resource-radio">
+                                <label for="resource3" class="resource-label">xxxxxxxx</label>
+                            </div>
+                            <div class="resource-option">
+                                <input type="radio" id="resource4" name="resources" class="resource-radio">
+                                <label for="resource4" class="resource-label">xxxxxxxx</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="recipient-section">
+                        <h2 class="select-what-to">Who are you sharing them with?</h2>
+                        <div class="form-fields">
+                            <div class="form-field">
+                                <input type="text" class="form-input" placeholder="First Name">
+                            </div>
+                            <div class="form-field">
+                                <input type="text" class="form-input" placeholder="Last Name">
+                            </div>
+                            <div class="form-field">
+                                <input type="email" class="form-input" placeholder="Email">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="send-section">
+                        <button class="send-button">
+                            <span class="send">Send</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Navigation -->
+        <div class="about-rcdi-parent">
+            <a href="../vowst-opening/index.html" class="nav-link">
+                <div class="about-rcdi">About rCDI</div>
+            </a>
+            <img class="vowst-nav-child" alt="" src="assets/Line.svg">
+            <a href="../vowst-efficacy/index.html" class="nav-link">
+                <div class="about-rcdi">Efficacy</div>
+            </a>
+            <img class="vowst-nav-child" alt="" src="assets/Line.svg">
+            <div class="about-rcdi">Safety</div>
+            <img class="vowst-nav-child" alt="" src="assets/Line.svg">
+            <div class="about-rcdi">Dosing</div>
+            <img class="vowst-nav-child" alt="" src="assets/Line.svg">
+            <div class="about-rcdi">Access & Support</div>
+            <img class="vowst-nav-child" alt="" src="assets/Line.svg">
+            <div class="about-rcdi">Cost & Coverage</div>
+            <img class="vowst-nav-child" alt="" src="assets/Line.svg">
+            <div class="about-rcdi">MOA</div>
+            <img class="vowst-nav-child" alt="" src="assets/Line.svg">
+            <a href="../vowst-videos/index.html" class="nav-link">
+                <div class="about-rcdi">Resources</div>
+            </a>
+            <img class="vowst-nav-child" alt="" src="assets/Line.svg">
+            <div class="about-rcdi">1-2 Gut Punch with VOWST</div>
+            <img class="vowst-nav-child" alt="" src="assets/Line.svg">
+            <a href="#" class="nav-link email-link">
+                <img src="assets/email-icon.svg" alt="Email" class="email-icon">
+            </a>
+        </div>
+    </div>
+
+    <script>
+        // Force full-screen mode on iOS
+        if (navigator.userAgent.match(/iPad|iPhone|iPod/)) {
+            document.addEventListener('DOMContentLoaded', function() {
+                if (document.documentElement.requestFullscreen) {
+                    document.documentElement.requestFullscreen();
+                }
+                
+                // Lock orientation to landscape
+                if (screen.orientation && screen.orientation.lock) {
+                    screen.orientation.lock('landscape');
+                }
+            });
+            
+            // Prevent Safari UI from reappearing
+            window.addEventListener('beforeunload', function() {
+                if (document.fullscreenElement) {
+                    document.exitFullscreen();
+                }
+            });
+        }
+
+        function navigateToHome(event) {
+            event.preventDefault();
+            window.location.href = '../home/index.html';
+        }
+    </script>
+</body>
+</html>

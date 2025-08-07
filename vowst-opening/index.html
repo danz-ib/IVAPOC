@@ -73,12 +73,6 @@
 	
 	<div class="ipad-pro-129-38">
 		
-		<a href="../home/index.html" class="home-link" onclick="navigateToHome(event)">
-			<img class="noun-home-1570646-icon" alt="" src="assets/noun-home-1570646.svg">
-		</a>
-		
-		<img class="noun-menu-6829015-icon" alt="" src="assets/noun-menu-6829015.svg">
-		
 		<div class="clostridioides-difficile-c-container">
 			<i>*Clostridioides difficile</i>
 			<span> (</span>
@@ -137,6 +131,7 @@
 				<p class="tap-here">Tap  here for indications and additional Important Safety Information,</p>
 				<p class="as-early-as-first-c-diff-recu">including BOXED WARNING on Serious Infections and Malignancy</p>
 			</div>
+			<div class="demo-disclaimer">Not approved for use. Working demo only.</div>
 			<div class="see-accompanying-full">See accompanying Full Prescribing Information</div>
 		</div>
 		<img class="layer-1-icon" alt="" src="assets/Layer_1.svg">
@@ -189,7 +184,9 @@
 			</a>
 			<img class="line-icon" alt="" src="assets/Line.svg">
 			
-			<div class="about-rcdi">1-2 Gut Punch with VOWST</div>
+			<a href="../vowst-rte/index.html" class="nav-link email-link" onclick="navigateToRTE(event)">
+				<img src="assets/email-icon.svg" alt="Email" class="email-icon">
+			</a>
 		</div>
 	</div>
 	
@@ -201,6 +198,15 @@
 				com.veeva.clm.navigateToSlide('home/index.html');
 			} else {
 				window.location.href = '../home/index.html';
+			}
+		}
+		
+		function navigateToRTE(event) {
+			event.preventDefault();
+			if (typeof com !== 'undefined' && com.veeva && com.veeva.clm) {
+				com.veeva.clm.navigateToSlide('vowst-rte/index.html');
+			} else {
+				window.location.href = '../vowst-rte/index.html';
 			}
 		}
 		
@@ -221,6 +227,8 @@
 				window.location.href = '../vowst-videos/index.html';
 			}
 		}
+		
+
 	</script>
 </body>
 </html>

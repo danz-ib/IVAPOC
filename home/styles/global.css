@@ -8,10 +8,37 @@ body {
     background: white;
 }
 
-
 :root {
-    
     /* Color */
     --color-whitesmoke: #ededed;
+    --color-black: #000;
+    --color-white: #fff;
+    --color-darkslateblue: #193176;
+    --color-steelblue: #009bcf;
+    --color-firebrick: #c61d1d;
     
+    /* Font */
+    --font-arial: Arial;
+    --font-open-sans: Open Sans;
+    
+    /* FontSize */
+    --font-size-16: 16px;
+    --font-size-18: 18px;
+}
+
+.demo-disclaimer {
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--color-firebrick);
+    color: var(--color-white);
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-size: 18px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: normal;
+    text-align: center;
+    z-index: 1000;
+    white-space: nowrap;
 }

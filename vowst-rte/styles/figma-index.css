@@ -1,0 +1,293 @@
+.vowst-rte-page-child {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 1366px;
+    height: 1024px;
+}
+.vowst-rte-page-item {
+    position: absolute;
+    top: 49px;
+    left: 0px;
+    background-color: var(--color-mediumblue-200);
+    width: 462px;
+    height: 911px;
+}
+.share-resources-with {
+    position: absolute;
+    top: 137px;
+    left: 85px;
+    font-size: 48px;
+    line-height: 120%;
+    font-family: var(--font-mensura-slab-black);
+    color: var(--color-mediumblue-100);
+    display: flex;
+    align-items: center;
+    width: 327px;
+    height: 201px;
+}
+.select-what-to {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    font-size: var(--font-size-32);
+    line-height: 24px;
+    color: var(--color-midnightblue);
+}
+.dosing-calculator {
+    position: absolute;
+    top: 0px;
+    left: 46px;
+}
+.group-child {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    border-radius: 50%;
+    background-color: var(--color-mediumblue-200);
+    border: 1px solid var(--color-midnightblue);
+    box-sizing: border-box;
+    width: 25px;
+    height: 25px;
+}
+.dosing-calculator-parent {
+    position: absolute;
+    top: 60px;
+    left: 0px;
+    width: 186px;
+    height: 25px;
+}
+.payer-coverage-map-parent {
+    position: absolute;
+    top: 110px;
+    left: 0px;
+    width: 207px;
+    height: 25px;
+}
+.xxxxxxxx-parent {
+    position: absolute;
+    top: 160px;
+    left: 0px;
+    width: 124px;
+    height: 25px;
+}
+.xxxxxxxx-group {
+    position: absolute;
+    top: 210px;
+    left: 0px;
+    width: 124px;
+    height: 25px;
+}
+.select-what-to-share-parent {
+    position: absolute;
+    top: 167px;
+    left: 578px;
+    width: 303px;
+    height: 235px;
+}
+.rectangle-div {
+    position: absolute;
+    height: 100%;
+    width: 76.09%;
+    top: 0%;
+    right: 0%;
+    bottom: 0%;
+    left: 23.91%;
+    border-radius: var(--br-8);
+    background-color: var(--color-mediumblue-200);
+    border: 1px solid var(--color-midnightblue);
+    box-sizing: border-box;
+}
+.first-name {
+    position: absolute;
+    top: 8px;
+    left: 0px;
+}
+.rectangle-parent {
+    position: absolute;
+    height: 19.05%;
+    width: 100%;
+    top: 27.62%;
+    right: 0%;
+    bottom: 53.33%;
+    left: 0%;
+}
+.rectangle-group {
+    position: absolute;
+    height: 19.05%;
+    width: 100%;
+    top: 54.29%;
+    right: 0%;
+    bottom: 26.67%;
+    left: 0%;
+}
+.rectangle-container {
+    position: absolute;
+    height: 19.05%;
+    width: 100%;
+    top: 80.95%;
+    right: 0%;
+    bottom: 0%;
+    left: 0%;
+}
+.who-are-you-sharing-them-with-parent {
+    position: absolute;
+    top: 473px;
+    left: 578px;
+    width: 481px;
+    height: 210px;
+}
+.group-child3 {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0%;
+    right: 0%;
+    bottom: 0%;
+    left: 0%;
+    border-radius: var(--br-8);
+    background-color: var(--color-mediumblue-100);
+}
+.send {
+    position: absolute;
+    top: 8px;
+    left: 163px;
+}
+.group-div {
+    position: absolute;
+    height: 3.91%;
+    width: 26.79%;
+    top: 75.88%;
+    right: 30.89%;
+    bottom: 20.21%;
+    left: 42.31%;
+    text-align: center;
+    color: var(--color-white);
+}
+.about-rcdi {
+    position: relative;
+    font-weight: 600;
+}
+.vowst-nav-child {
+    width: 14px;
+    position: relative;
+    height: 38px;
+    object-fit: contain;
+}
+.email-icon {
+    width: 40px;
+    position: relative;
+    height: 27.5px;
+}
+.vowst-nav {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    background-color: var(--color-lightskyblue);
+    width: 1366px;
+    height: 64px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 13px 40px;
+    box-sizing: border-box;
+    gap: 26px;
+    text-align: center;
+    color: var(--color-midnightblue);
+}
+.vowst-top-bar-child {
+    width: 89.8px;
+    position: relative;
+    height: 50px;
+    z-index: 0;
+}
+.union-icon {
+    width: 41.3px;
+    position: relative;
+    height: 9.1px;
+    z-index: 1;
+}
+.tap-here {
+    margin: 0;
+    white-space: pre-wrap;
+}
+.including-boxed-warning {
+    margin: 0;
+}
+.tap-here-for-container {
+    width: 400px;
+    position: relative;
+    line-height: 14px;
+    display: inline-block;
+    flex-shrink: 0;
+    z-index: 2;
+}
+.see-accompanying-full {
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    text-align: right;
+    font-size: var(--font-size-14);
+    font-weight: 600;
+    color: var(--color-midnightblue);
+    text-decoration: underline;
+    cursor: pointer;
+    z-index: 3;
+}
+.group-child4 {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background-color: var(--color-firebrick);
+    width: 406px;
+    height: 51px;
+}
+.not-approved-for {
+    position: absolute;
+    top: 12.07px;
+    left: 11.12px;
+}
+.rectangle-parent1 {
+    width: 406px;
+    position: absolute;
+    margin: 0 !important;
+    top: 0px;
+    left: 634px;
+    height: 51px;
+    z-index: 4;
+    text-align: center;
+    font-size: 19.31px;
+    color: var(--color-white);
+    font-family: var(--font-open-sans);
+}
+.vowst-top-bar {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background-color: var(--color-white);
+    border-bottom: 10px solid var(--color-midnightblue);
+    box-sizing: border-box;
+    width: 1366px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0px 26px 0px 0px;
+    gap: 37px;
+    font-size: var(--font-size-12);
+}
+.vowst-rte-page {
+    width: 100%;
+    position: relative;
+    background-color: var(--color-white);
+    height: 1024px;
+    overflow: hidden;
+    text-align: left;
+    font-size: var(--font-size-18);
+    color: var(--color-black);
+    font-family: var(--font-barlow);
+}
+

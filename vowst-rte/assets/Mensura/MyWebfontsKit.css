@@ -1,0 +1,79 @@
+/**
+ * @license
+ * MyFonts Webfont Build ID 3867246, 2020-12-16T11:57:38-0500
+ * 
+ * The fonts listed in this notice are subject to the End User License
+ * Agreement(s) entered into by the website owner. All other parties are 
+ * explicitly restricted from using the Licensed Webfonts(s).
+ * 
+ * You may obtain a valid license at the URLs below.
+ * 
+ * Webfont: undefined by undefined
+ * URL: https://www.myfonts.comundefined
+ * Copyright: Copyright © 2024 Monotype Imaging Inc. All rights reserved.
+ *
+ * Webfont: undefined by undefined
+ * URL: https://www.myfonts.comundefined
+ * Copyright: Copyright © 2024 Monotype Imaging Inc. All rights reserved.
+ *
+ * Webfont: undefined by undefined
+ * URL: https://www.myfonts.comundefined
+ * Copyright: Copyright © 2024 Monotype Imaging Inc. All rights reserved.
+ *
+ * Webfont: undefined by undefined
+ * URL: https://www.myfonts.comundefined
+ * Copyright: Copyright © 2024 Monotype Imaging Inc. All rights reserved.
+ *
+ * Webfont: undefined by undefined
+ * URL: https://www.myfonts.comundefined
+ * Copyright: Copyright © 2024 Monotype Imaging Inc. All rights reserved.
+ *
+ * Webfont: undefined by undefined
+ * URL: https://www.myfonts.comundefined
+ * Copyright: Copyright © 2024 Monotype Imaging Inc. All rights reserved.
+ *
+ * Webfont: undefined by undefined
+ * URL: https://www.myfonts.comundefined
+ * Copyright: Copyright © 2024 Monotype Imaging Inc. All rights reserved.
+ *
+ * Webfont: undefined by undefined
+ * URL: https://www.myfonts.comundefined
+ * Copyright: Copyright © 2024 Monotype Imaging Inc. All rights reserved.
+ * 
+ * © 2024 MyFonts Inc. */
+
+
+  
+@font-face {
+  font-family: "MensuraSlabLight";
+  src: url('webFonts/MensuraSlabLight/font.woff2') format('woff2'), url('webFonts/MensuraSlabLight/font.woff') format('woff');
+}
+@font-face {
+  font-family: "MensuraSlabItalic";
+  src: url('webFonts/MensuraSlabItalic/font.woff2') format('woff2'), url('webFonts/MensuraSlabItalic/font.woff') format('woff');
+}
+@font-face {
+  font-family: "MensuraSlabBlackItalic";
+  src: url('webFonts/MensuraSlabBlackItalic/font.woff2') format('woff2'), url('webFonts/MensuraSlabBlackItalic/font.woff') format('woff');
+}
+@font-face {
+  font-family: "MensuraSlabBold";
+  src: url('webFonts/MensuraSlabBold/font.woff2') format('woff2'), url('webFonts/MensuraSlabBold/font.woff') format('woff');
+}
+@font-face {
+  font-family: "MensuraSlabLightItalic";
+  src: url('webFonts/MensuraSlabLightItalic/font.woff2') format('woff2'), url('webFonts/MensuraSlabLightItalic/font.woff') format('woff');
+}
+@font-face {
+  font-family: "MensuraSlab";
+  src: url('webFonts/MensuraSlab/font.woff2') format('woff2'), url('webFonts/MensuraSlab/font.woff') format('woff');
+}
+@font-face {
+  font-family: "MensuraSlabBlack";
+  src: url('webFonts/MensuraSlabBlack/font.woff2') format('woff2'), url('webFonts/MensuraSlabBlack/font.woff') format('woff');
+}
+@font-face {
+  font-family: "MensuraSlabBoldItalic";
+  src: url('webFonts/MensuraSlabBoldItalic/font.woff2') format('woff2'), url('webFonts/MensuraSlabBoldItalic/font.woff') format('woff');
+}
+
