@@ -32,6 +32,28 @@
                 <div class="see-accompanying-full">See accompanying Full Prescribing Information</div>
             </div>
         </div>
+        
+        <!-- Safety Information Box -->
+        <div class="rectangle-parent">
+            <div class="frame-child">
+            </div>
+            <img class="frame-item" alt="" src="assets/Group 8.svg">
+            
+            <b class="important-safety-information">IMPORTANT SAFETY INFORMATION</b>
+            <div class="indications-and-usage-zenpep-container">
+                <span class="indications-and-usage-zenpep-container1">
+                    <p class="indications-and-usage-zenpep">
+                        <b class="indications-and-usage">INDICATIONS AND USAGE</b>
+                        <span class="zenpep-is-indicated-for">ZENPEP® is indicated for the treatment of exocrine pancreatic insufficiency in adult and pediatric patients.</span>
+                    </p>
+                    <p class="indications-and-usage-zenpep">
+                        <b>IMPORTANT SAFETY INFORMATION</b>
+                    </p>
+                    <p class="warnings-and-precautions">Warnings and Precautions</p>
+                    <p class="fibrosing-colonopathy">Fibrosing Colonopathy</p>
+                </span>
+            </div>
+        </div>
 
         <!-- Main Content Area - Flexbox Layout -->
         <div class="zenpep-rte-page">
@@ -42,7 +64,7 @@
                 
                 <div class="rte-right-panel">
                     <div class="select-what-to-share-section">
-                        <h2 class="select-what-to">Select what to share:</h2>
+                        <h2 class="select-what-to">Select resources to share:</h2>
                         <div class="resource-options">
                             <div class="resource-option">
                                 <input type="radio" id="dosing-calc" name="resources" class="resource-radio">
@@ -54,34 +76,47 @@
                             </div>
                             <div class="resource-option">
                                 <input type="radio" id="resource3" name="resources" class="resource-radio">
-                                <label for="resource3" class="resource-label">xxxxxxxx</label>
+                                <label for="resource3" class="resource-label">Dosing Card</label>
                             </div>
                             <div class="resource-option">
                                 <input type="radio" id="resource4" name="resources" class="resource-radio">
-                                <label for="resource4" class="resource-label">xxxxxxxx</label>
+                                <label for="resource4" class="resource-label">Z-Save Flashcard</label>
+                            </div>
+                            <div class="resource-option">
+                                <input type="radio" id="resource4" name="resources" class="resource-radio">
+                                <label for="resource4" class="resource-label">Ready, Set, ZENPEP!</label>
                             </div>
                         </div>
                     </div>
                     
                     <div class="recipient-section">
-                        <h2 class="select-what-to">Who are you sharing them with?</h2>
+                        <div class="contact-header">
+                            <h2 class="select-what-to">HCP Contact</h2>
+                            <button class="change-contact-btn">Change Contact</button>
+                        </div>
                         <div class="form-fields">
                             <div class="form-field">
-                                <input type="text" class="form-input" placeholder="First Name">
+                                <label class="form-label">First Name</label>
+                                <input type="text" class="form-input" value="Dr. Sarah">
                             </div>
                             <div class="form-field">
-                                <input type="text" class="form-input" placeholder="Last Name">
+                                <label class="form-label">Last Name</label>
+                                <input type="text" class="form-input" value="Johnson">
                             </div>
                             <div class="form-field">
-                                <input type="email" class="form-input" placeholder="Email">
+                                <label class="form-label">Email</label>
+                                <input type="email" class="form-input" value="sarah.johnson@hospital.com">
                             </div>
                         </div>
                     </div>
                     
                     <div class="send-section">
-                        <button class="send-button">
+                        <button class="send-button" onclick="submitResources()" id="send-button">
                             <span class="send">Send</span>
                         </button>
+                        <div id="confirmation-message" class="confirmation-message" style="display: none;">
+                            <p>Resources sent successfully to Dr. Sarah Johnson!</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -121,6 +156,16 @@
                     document.exitFullscreen();
                 }
             });
+        }
+
+        function submitResources() {
+            // Show confirmation message
+            const confirmationMessage = document.getElementById('confirmation-message');
+            confirmationMessage.style.display = 'block';
+            
+            // Hide the send button
+            const sendButton = document.getElementById('send-button');
+            sendButton.style.display = 'none';
         }
     </script>
 </body>
