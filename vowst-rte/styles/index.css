@@ -159,10 +159,10 @@
 /* Main Content - Vowst Design */
 .vowst-rte-page {
     position: absolute;
-    top: 60px;
+    top: 46px;
     left: 0;
     width: 1366px;
-    height: 900px;
+    height: 914px;
     overflow: hidden;
     background-color: var(--color-white);
 }
