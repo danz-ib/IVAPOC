@@ -228,37 +228,89 @@ document.querySelector('.zenpep-tool__input-wrapper')?.classList.add('zenpep-fad
         resultWeightInput.value = weight;
     
       // ==========================
-// ✅ UPDATED: Default to 60K if weight ≥ 180
-// ==========================
-if (weight >= 180) {
-  const track = document.getElementById("pillToggleTrack");
-  if (track.dataset.state !== "60K") {
-    track.dataset.state = "60K";
-    document.getElementById("pill60k").classList.add("active");
-    document.getElementById("pill40k").classList.remove("active");
-
-    // 🎨 Update visual styles to match 60K state
-    const toggleBox = document.querySelector(".zenpep-pill-toggle-box");
-    const outerBox = document.querySelector(".zenpep-dose-box");
-    const middleBox = document.querySelector(".zenpep-dose-box--nested");
-    const innerBox = document.querySelector(".zenpep-dose-box--inner");
-    const pillLabelSecond = document.querySelector(".zenpep-pill-label-second");
-    const pillLabelThird = document.querySelector(".zenpep-pill-label-third");
-    const lipaseTitle = document.querySelector(".lipase-title");
-
-    toggleBox.style.backgroundColor = "#C7C4E2";
-    toggleBox.style.borderColor = "#252E64";
-    track.style.borderColor = "#252E64";
-    outerBox.style.backgroundColor = "#C7C4E2";
-    middleBox.style.backgroundColor = "#8781BD";
-    innerBox.style.backgroundColor = "#5D5380";
-
-    if (pillLabelSecond) pillLabelSecond.style.color = "#252E64";
-    if (pillLabelThird) pillLabelThird.style.color = "#252E64";
-    if (lipaseTitle) lipaseTitle.style.color = "#252E64";
-  }
-}
-    
+      // 🆕 NEW FEATURE: Weight-based automatic pill strength selection
+      // ==========================
+      // 
+      // PURPOSE: Automatically set the appropriate pill strength (40K vs 60K) based on patient weight
+      // - Weights ≥ 180 lbs: Automatically select 60K pill strength
+      // - Weights < 180 lbs: Automatically select 40K pill strength
+      //
+      // IMPLEMENTATION DETAILS:
+      // 1. Updates the pill toggle track data-state attribute
+      // 2. Toggles the active class on pill strength labels
+      // 3. Applies the appropriate color scheme to match the selected pill strength
+      // 4. Uses the same styling logic as the manual pill toggle for consistency
+      //
+      // STYLING CHANGES:
+      // - 60K State: Blue theme (#C7C4E2 backgrounds, #252E64 borders/text)
+      // - 40K State: Purple theme (#f8eefa background, #66004b borders, #A91C8B title)
+            // - Dose boxes and labels are updated to match the selected pill strength
+      // ==========================
+      
+      // Get references to pill toggle elements for weight-based pill selection
+      const track = document.getElementById("pillToggleTrack");
+        const pill40k = document.getElementById("pill40k");
+        const pill60k = document.getElementById("pill60k");
+        
+        if (weight >= 180) {
+          // Set to 60K if weight ≥ 180
+          if (track.dataset.state !== "60K") {
+            track.dataset.state = "60K";
+            pill40k.classList.remove("active");
+            pill60k.classList.add("active");
+            
+            // Trigger the existing toggle logic for 60K state
+            const toggleBox = document.querySelector(".zenpep-pill-toggle-box");
+            const outerBox = document.querySelector(".zenpep-dose-box");
+            const middleBox = document.querySelector(".zenpep-dose-box--nested");
+            const innerBox = document.querySelector(".zenpep-dose-box--inner");
+            const pillLabelSecond = document.querySelector(".zenpep-pill-label-second");
+            const pillLabelThird = document.querySelector(".zenpep-pill-label-third");
+            const lipaseTitle = document.querySelector(".lipase-title");
+            
+            toggleBox.style.backgroundColor = "#C7C4E2";
+            toggleBox.style.borderColor = "#252E64";
+            track.style.borderColor = "#252E64";
+            outerBox.style.backgroundColor = "#C7C4E2";
+            middleBox.style.backgroundColor = "#8781BD";
+            innerBox.style.backgroundColor = "#5D5380";
+            
+            if (pillLabelSecond) pillLabelSecond.style.color = "#252E64";
+            if (pillLabelThird) pillLabelThird.style.color = "#252E64";
+            if (lipaseTitle) lipaseTitle.style.color = "#252E64";
+          }
+        } else {
+          // Set to 40K for weights < 180
+          if (track.dataset.state !== "40K") {
+            track.dataset.state = "40K";
+            pill40k.classList.add("active");
+            pill60k.classList.remove("active");
+            
+            // Trigger the existing toggle logic for 40K state
+            const toggleBox = document.querySelector(".zenpep-pill-toggle-box");
+            const outerBox = document.querySelector(".zenpep-dose-box");
+            const middleBox = document.querySelector(".zenpep-dose-box--nested");
+            const innerBox = document.querySelector(".zenpep-dose-box--inner");
+            const pillLabelSecond = document.querySelector(".zenpep-pill-label-second");
+            const pillLabelThird = document.querySelector(".zenpep-pill-label-third");
+            const lipaseTitle = document.querySelector(".lipase-title");
+            
+            toggleBox.style.backgroundColor = "#f8eefa";
+            toggleBox.style.borderColor = "#66004b";
+            track.style.borderColor = "#66004b";
+            outerBox.style.backgroundColor = "";
+            middleBox.style.backgroundColor = "";
+            innerBox.style.backgroundColor = "";
+            
+            if (pillLabelSecond) pillLabelSecond.style.color = "";
+            if (pillLabelThird) pillLabelThird.style.color = "";
+            if (lipaseTitle) lipaseTitle.style.color = "#A91C8B";
+                    }
+        }
+        
+        // 🆕 END: Weight-based pill strength selection logic
+        // =================================================
+        
         const results = calculateDosage(weight);
     
         setTimeout(() => {
@@ -292,6 +344,12 @@ if (weight >= 180) {
       });
     }
   
+    // 🆕 FUNCTION: handleRecalc - Recalculates dosage and applies weight-based pill selection
+    // ================================================================================
+    // This function contains the same weight-based pill selection logic as the main calculate button
+    // to ensure consistency when users recalculate with different weights.
+    // See the main calculate button handler above for detailed comments on the pill selection logic.
+    // ================================================================================
     function handleRecalc() {
       const weight = parseInt(resultWeightInput.value, 10);
       const invalidModal = document.getElementById("invalidWeightModal");
@@ -304,14 +362,18 @@ if (weight >= 180) {
         sessionStorage.setItem("zenpepWeight", weight);
         const results = calculateDosage(weight);
 
+        const track = document.getElementById("pillToggleTrack");
+        const pill40k = document.getElementById("pill40k");
+        const pill60k = document.getElementById("pill60k");
+        
         if (weight >= 180) {
-          const track = document.getElementById("pillToggleTrack");
+          // Set to 60K if weight ≥ 180
           if (track.dataset.state !== "60K") {
             track.dataset.state = "60K";
-            document.getElementById("pill60k").classList.add("active");
-            document.getElementById("pill40k").classList.remove("active");
-        
-            // 🎨 Update visual styles to match 60K state
+            pill40k.classList.remove("active");
+            pill60k.classList.add("active");
+            
+            // Trigger the existing toggle logic for 60K state
             const toggleBox = document.querySelector(".zenpep-pill-toggle-box");
             const outerBox = document.querySelector(".zenpep-dose-box");
             const middleBox = document.querySelector(".zenpep-dose-box--nested");
@@ -319,17 +381,44 @@ if (weight >= 180) {
             const pillLabelSecond = document.querySelector(".zenpep-pill-label-second");
             const pillLabelThird = document.querySelector(".zenpep-pill-label-third");
             const lipaseTitle = document.querySelector(".lipase-title");
-        
+            
             toggleBox.style.backgroundColor = "#C7C4E2";
             toggleBox.style.borderColor = "#252E64";
             track.style.borderColor = "#252E64";
             outerBox.style.backgroundColor = "#C7C4E2";
             middleBox.style.backgroundColor = "#8781BD";
             innerBox.style.backgroundColor = "#5D5380";
-        
+            
             if (pillLabelSecond) pillLabelSecond.style.color = "#252E64";
             if (pillLabelThird) pillLabelThird.style.color = "#252E64";
             if (lipaseTitle) lipaseTitle.style.color = "#252E64";
+          }
+        } else {
+          // Set to 40K for weights < 180
+          if (track.dataset.state !== "40K") {
+            track.dataset.state = "40K";
+            pill40k.classList.add("active");
+            pill60k.classList.remove("active");
+            
+            // Trigger the existing toggle logic for 40K state
+            const toggleBox = document.querySelector(".zenpep-pill-toggle-box");
+            const outerBox = document.querySelector(".zenpep-dose-box");
+            const middleBox = document.querySelector(".zenpep-dose-box--nested");
+            const innerBox = document.querySelector(".zenpep-dose-box--inner");
+            const pillLabelSecond = document.querySelector(".zenpep-pill-label-second");
+            const pillLabelThird = document.querySelector(".zenpep-pill-label-third");
+            const lipaseTitle = document.querySelector(".lipase-title");
+            
+            toggleBox.style.backgroundColor = "#f8eefa";
+            toggleBox.style.borderColor = "#66004b";
+            track.style.borderColor = "#66004b";
+            outerBox.style.backgroundColor = "";
+            middleBox.style.backgroundColor = "";
+            innerBox.style.backgroundColor = "";
+            
+            if (pillLabelSecond) pillLabelSecond.style.color = "";
+            if (pillLabelThird) pillLabelThird.style.color = "";
+            if (lipaseTitle) lipaseTitle.style.color = "#A91C8B";
           }
         }
         
@@ -386,7 +475,12 @@ if (weight >= 180) {
       }
       
   
-    // 💊 Pill strength toggle logic
+        // 💊 Pill strength toggle logic
+    // =============================
+    // This section handles the manual pill strength toggle functionality.
+    // The weight-based automatic pill selection (above) uses similar styling logic
+    // to ensure visual consistency between automatic and manual pill selection.
+    // =============================
     const track = document.getElementById("pillToggleTrack");
     const pill40k = document.getElementById("pill40k");
     const pill60k = document.getElementById("pill60k");
@@ -398,12 +492,14 @@ if (weight >= 180) {
     const pillLabelThird = document.querySelector(".zenpep-pill-label-third");
     const lipaseTitle = document.querySelector(".lipase-title");
   
+    // Manual pill strength toggle event handler
     track.addEventListener("click", () => {
       const isNow60k = track.dataset.state === "40K";
       track.dataset.state = isNow60k ? "60K" : "40K";
       pill40k.classList.toggle("active", !isNow60k);
       pill60k.classList.toggle("active", isNow60k);
   
+      // Apply styling based on selected pill strength
       toggleBox.style.backgroundColor = isNow60k ? "#C7C4E2" : "#f8eefa";
       toggleBox.style.borderColor = isNow60k ? "#252E64" : "#66004b";
       track.style.borderColor = isNow60k ? "#252E64" : "#66004b";
@@ -411,10 +507,12 @@ if (weight >= 180) {
       middleBox.style.backgroundColor = isNow60k ? "#8781BD" : "";
       innerBox.style.backgroundColor = isNow60k ? "#5D5380" : "";
   
+      // Update text colors based on selected pill strength
       if (pillLabelSecond) pillLabelSecond.style.color = isNow60k ? "#252E64" : "";
       if (pillLabelThird) pillLabelThird.style.color = isNow60k ? "#252E64" : "";
       if (lipaseTitle) lipaseTitle.style.color = isNow60k ? "#252E64" : "#A91C8B";
   
+      // Recalculate and update pill labels with new strength
       const storedWeight = parseInt(sessionStorage.getItem("zenpepWeight"), 10);
       if (!isNaN(storedWeight)) {
         const results = calculateDosage(storedWeight);

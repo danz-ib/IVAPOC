@@ -99,11 +99,13 @@ ul li {
   padding: 13px 56px;
   z-index: 1001;
 }
-  box-sizing: border-box;
-  gap: 70px;
-  text-align: center;
-  font-size: var(--font-size-20);
-}
+
+/* Missing selector and opening brace - this appears to be orphaned CSS properties */
+/* These properties should be part of a proper CSS rule */
+/* box-sizing: border-box; */
+/* gap: 70px; */
+/* text-align: center; */
+/* font-size: var(--font-size-20); */
 
 .nav-link {
   text-decoration: none;
@@ -1088,13 +1090,14 @@ ul li {
   align-items: center;
 }
 
+/* Pill toggle box - the container that holds the toggle switch and labels */
 .zenpep-pill-toggle-box {
-    border: 2px solid #66004b;
+    border: 2px solid #66004b;   /* Default purple border (40K state) */
     border-radius: 16px;
     padding: .5rem;
     width: 191px;
     height: 130px;
-    background-color: #f5ecf4;
+    background-color: #f5ecf4;    /* Default light purple background (40K state) */
     display: flex
 ;
     flex-direction: column;
@@ -1117,12 +1120,13 @@ ul li {
 }
 
 
+/* Pill toggle track - the main toggle switch container */
 .pill-toggle-track {
   width: 155px;
   height: 38px;
 
   background-color: white;
-  border: 2px solid #66004b;
+  border: 2px solid #66004b;  /* Default purple border (40K state) */
   border-radius: 20px;
   position: relative;
   margin-bottom: 0.4rem;
@@ -1248,26 +1252,49 @@ ul li {
   transition: background-color 0.3s ease;
 }
 
+/* Pill toggle thumb - the circular button that moves between positions */
 .pill-toggle-thumb {
   position: absolute;
   top: 2px;
-  left: 4px;
+  left: 4px;                    /* Default position (40K state) */
   width: 32px;
   height: 32px;
-  background-color: #66004b;
+  background-color: #66004b;     /* Default purple color (40K state) */
   border-radius: 50%;
 
-  transition: left 0.3s ease, background-color 0.3s ease;
+  transition: left 0.3s ease, background-color 0.3s ease;  /* Smooth transitions for position and color changes */
 }
 
+/* 🆕 WEIGHT-BASED PILL STRENGTH STYLING */
+/* ======================================== */
+/* PURPOSE: These styles automatically apply when the pill toggle track's */
+/* data-state attribute is set programmatically based on patient weight. */
+/* WEIGHT LOGIC: */
+/* - Weights ≥ 180 lbs: data-state="60K" → Blue theme */
+/* - Weights < 180 lbs: data-state="40K" → Purple theme */
+/* IMPLEMENTATION: The JavaScript automatically sets these data-state values */
+/* when calculating dosage, ensuring visual consistency with manual pill selection. */
+
+/* 🔵 60K PILL STRENGTH STATE (Weights ≥ 180 lbs) */
 .pill-toggle-track[data-state="60K"] .pill-toggle-thumb {
-  background-color: #252e64;
-  left: 120px;
+  background-color: #252e64;  /* Dark blue thumb color */
+  left: 120px;                /* Position thumb on the right side (60K position) */
 }
 
 /* When toggled to 60K, update the parent box's background */
 .pill-toggle-track[data-state="60K"] ~ .zenpep-pill-toggle-box {
-  background-color: #c7c4e2;
+  background-color: #c7c4e2;  /* Light blue background for 60K state */
+}
+
+/* 🟣 40K PILL STRENGTH STATE (Weights < 180 lbs) */
+.pill-toggle-track[data-state="40K"] .pill-toggle-thumb {
+  background-color: #66004b;  /* Dark purple thumb color */
+  left: 4px;                  /* Position thumb on the left side (40K position) */
+}
+
+/* When toggled to 40K, update the parent box's background */
+.pill-toggle-track[data-state="40K"] ~ .zenpep-pill-toggle-box {
+  background-color: #f5ecf4;  /* Light purple background for 40K state */
 }
 
 /* 🔒 Initial state */
